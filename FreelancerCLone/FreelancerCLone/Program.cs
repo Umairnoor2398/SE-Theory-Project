@@ -18,7 +18,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultUI().AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
-//NLogBuilder.ConfigureNLog("nlog.config");
+NLogBuilder.ConfigureNLog("nlog.config");
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

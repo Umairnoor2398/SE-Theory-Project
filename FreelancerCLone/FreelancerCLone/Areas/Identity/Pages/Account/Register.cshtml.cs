@@ -10,6 +10,8 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using FreelancerCLone.DbModels;
+using FreelancerCLone.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -18,6 +20,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Bcpg;
 
 namespace FreelancerCLone.Areas.Identity.Pages.Account
 {
@@ -78,6 +81,9 @@ namespace FreelancerCLone.Areas.Identity.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
+            [Required]
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -108,6 +114,7 @@ namespace FreelancerCLone.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            FreelancerDbContext db = new FreelancerDbContext();
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
@@ -121,8 +128,15 @@ namespace FreelancerCLone.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    FreelancerCLone.DbModels.User u = new FreelancerCLone.DbModels.User();
+                    u.FirstName = Input.FirstName;
+                    u.LastName = Input.LastName;
+                    u.Status = db.Lookups.Where(x=>x.Value == "Pending").FirstOrDefault().Id;
+                    u.IsActive = true;
+                    u.AddedOn = DateTime.Now;
                     var userId = await _userManager.GetUserIdAsync(user);
+                    u.UserId = userId;
+                    db.Users.Add(u);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
@@ -130,9 +144,9 @@ namespace FreelancerCLone.Areas.Identity.Pages.Account
                         pageHandler: null,
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
-
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    await MailSenderService.Instance.SendMailToUserOnRegister(Input.Email, u.FirstName, HtmlEncoder.Default.Encode(callbackUrl));
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
