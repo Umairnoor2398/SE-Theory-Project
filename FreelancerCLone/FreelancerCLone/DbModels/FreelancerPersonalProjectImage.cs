@@ -7,7 +7,7 @@ namespace FreelancerCLone.DbModels
     {
         public int Id { get; set; }
         public int PersonalProjectId { get; set; }
-        public int ImagePath { get; set; }
+        public string ImagePath { get; set; } = null!;
         public DateTime AddedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }
         public bool? IsActive { get; set; }

@@ -21,6 +21,7 @@ namespace FreelancerCLone.DbModels
         public int AddedBy { get; set; }
         public DateTime AddedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }
+        public bool? IsAssigned { get; set; }
         public bool? IsActive { get; set; }
 
         public virtual User AddedByNavigation { get; set; } = null!;
