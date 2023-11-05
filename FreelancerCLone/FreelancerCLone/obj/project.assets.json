@@ -12159,19 +12159,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bisma\\.nuget\\packages\\": {}
+    "C:\\Users\\Umair Noor\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
+      "projectUniqueName": "C:\\Users\\Umair Noor\\Desktop\\FreeLancerClone.github.io\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
       "projectName": "FreelancerCLone",
-      "projectPath": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
-      "packagesPath": "C:\\Users\\Bisma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\obj\\",
+      "projectPath": "C:\\Users\\Umair Noor\\Desktop\\FreeLancerClone.github.io\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
+      "packagesPath": "C:\\Users\\Umair Noor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Umair Noor\\Desktop\\FreeLancerClone.github.io\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Bisma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Umair Noor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12179,7 +12184,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12266,24 +12271,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.20, 6.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.20, 6.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.20, 6.0.20]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.20, 6.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -12292,7 +12279,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },

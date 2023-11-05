@@ -541,4 +541,3 @@ C:\Users\Umair Noor\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\
 C:\Users\Umair Noor\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\FreelancerCLone.genruntimeconfig.cache
 C:\Users\Umair Noor\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\ref\FreelancerCLone.dll
 C:\Users\Umair Noor\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\bin\Debug\net6.0\nlog.config
-C:\Users\Bisma\OneDrive\Desktop\Desktop\SE\SE Lab\SELabProject\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\bin\Debug\net6.0\nlog.config

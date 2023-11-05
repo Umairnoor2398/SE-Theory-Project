@@ -1,0 +1,90 @@
+﻿@model IEnumerable<FreelancerCLone.DbModels.FreelancerPersonalProject>
+
+@{
+	ViewData["Title"] = "Projects";
+}
+
+<h1>Projects</h1>
+
+<p>
+	<a asp-action="CreateEditProject">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Title)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Description)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.StartDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.EndDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Technology)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PublicUrl)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.AddedOn)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UpdatedOn)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.IsActive)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.User)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Title)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Description)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.StartDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.EndDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Technology)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.PublicUrl)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AddedOn)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UpdatedOn)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.IsActive)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.User.Id)
+				</td>
+				<td>
+					<a asp-action="CreateEditProject" asp-route-id="@item.Id">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
