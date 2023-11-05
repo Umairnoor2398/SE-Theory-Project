@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FreelancerCLone.DbModels.SkillCategory>
+
+@{
+	ViewData["Title"] = "Categories";
+}
+
+<h1>Categories</h1>
+
+<p>
+	<a data-toggle="modal" class="btn btn-primary" data-target="#skillCategoryModal" onclick="addSkillsCategory(0)">Create New</a>
+</p>
+<div id="addDiv"></div>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.CategoryName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.IsActive)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.CategoryName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.IsActive)
+				</td>
+				<td>
+					<a data-toggle="modal" class="btn btn-secondary" data-target="#skillCategoryModal" onclick="addSkillsCategory(@item.Id)">Edit</a> |
+					<a asp-action="Index" asp-route-category="@item.Id">Details</a> |
+					<a asp-action="DeleteCategory" asp-route-id="@item.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	function addSkillsCategory(id) {
+		$.ajax({
+			type: "Get",
+			url: "/Skills/CreateCategory",
+			data: { Id: id },
+			success: function (result) {
+				$("#addDiv").html(result);
+				$("#skillCategoryModal").modal('show');
+			}
+		})
+	}
+</script>

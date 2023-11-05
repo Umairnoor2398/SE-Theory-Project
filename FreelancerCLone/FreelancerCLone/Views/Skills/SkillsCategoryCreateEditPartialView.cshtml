@@ -1,0 +1,43 @@
+﻿@model FreelancerCLone.DbModels.SkillCategory
+
+@{
+	Layout = null;
+}
+
+<div class="modal fade" id="skillCategoryModal" tabindex="-1" aria-labelledby="skillCategoryModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				@if (ViewBag.Id != 0)
+				{
+					<h1 class="modal-title fs-5" id="skillCategoryModalLabel">Edit</h1>
+				}
+				else
+				{
+					<h1 class="modal-title fs-5" id="skillCategoryModalLabel">Create</h1>
+				}
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form asp-action="CreateCategory" enctype="multipart/form-data">
+					<input asp-for="Id" value="@ViewBag.Id" hidden />
+
+
+					<div class="form-floating">
+						<input asp-for="CategoryName" class="form-control" />
+						<label asp-for="CategoryName" class="control-label"></label>
+						<span asp-validation-for="CategoryName" class="text-danger"></span>
+					</div>
+
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<input type="submit" value="Save" class="btn btn-primary" />
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -8,7 +8,7 @@ namespace FreelancerCLone.Services
         private static MailSenderService _instance;
         private static SmtpClient smtpClient;
 
-        private static string emailAddress = "";
+        private static string emailAddress = "admin@gmail.com";
         private static string password = "";
 
         public static MailSenderService Instance
