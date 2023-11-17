@@ -1,0 +1,49 @@
+﻿@model FreelancerCLone.DbModels.ProjectBid
+
+@{
+    Layout = null;
+}
+
+<div class="modal fade" id="ProjectBidModal" tabindex="-1" aria-labelledby="ProjectBidModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @if (ViewBag.Id != 0)
+                {
+                    <h1 class="modal-title fs-5" id="ProjectBidModalLabel">Edit</h1>
+                }
+                else
+                {
+                    <h1 class="modal-title fs-5" id="ProjectBidModalLabel">Create</h1>
+                }
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="BidProjectPost">
+                    <input asp-for="ProjectId" value="@ViewBag.ProjectId" hidden />
+
+                    <div class="form-floating">
+                        <input asp-for="BidBudget" class="form-control" />
+                        <label asp-for="BidBudget" class="control-label"></label>
+                        <span asp-validation-for="BidBudget" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-floating">
+                        <input asp-for="BidDeadline" class="form-control" />
+                        <label asp-for="BidDeadline" class="control-label"></label>
+                        <span asp-validation-for="BidDeadline" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

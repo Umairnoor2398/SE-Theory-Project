@@ -1,75 +1,4 @@
-﻿@*@model FreelancerCLone.DbModels.Project
-
-@{
-    ViewData["Title"] = "Create";
-}
-
-<h1>Create</h1>
-
-<h4>Project</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-               
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Budget" class="control-label"></label>
-                <input asp-for="Budget" class="form-control" />
-                <span asp-validation-for="Budget" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Deadline" class="control-label"></label>
-                <input asp-for="Deadline" class="form-control" />
-                <span asp-validation-for="Deadline" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TechnologyRequired" class="control-label"></label>
-                <input asp-for="TechnologyRequired" class="form-control" />
-                <span asp-validation-for="TechnologyRequired" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class ="form-control" asp-items="ViewBag.Status"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddedBy" class="control-label"></label>
-                <select asp-for="AddedBy" class ="form-control" asp-items="ViewBag.AddedBy"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddedOn" class="control-label"></label>
-                <input asp-for="AddedOn" class="form-control" />
-                <span asp-validation-for="AddedOn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedOn" class="control-label"></label>
-                <input asp-for="UpdatedOn" class="form-control" />
-                <span asp-validation-for="UpdatedOn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-
-*@
-@model FreelancerCLone.ViewModels.ProjectViewModel
+﻿@model FreelancerCLone.ViewModels.ProjectViewModel
 
 @{
 	if(ViewBag.Id==0)
@@ -146,7 +75,7 @@
 
 <div class="card" style="align-items:center">
 	<div class="card-body col-lg-12 col-md-12 col-sm-12 col-12" style="align-items:center">
-		<form asp-action="Create">
+		<form asp-action="Create" enctype="multipart/form-data">
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 			<div class="row">
 				<div class="col-12">
@@ -187,19 +116,23 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class=" col-12 ">
-					<div class="form-floating form-group">
-						<select class="form-select" asp-for="TechnologyRequired" aria-label="Floating label select example">
-							<option selected>Open this select menu</option>
-						</select>
-						<label asp-for="TechnologyRequired">Select Required Technology</label>
 
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+					<div class="form-floating">
+						<input asp-for="TechnologyRequired" class="form-control" />
+						<label asp-for="TechnologyRequired" class="control-label"></label>
+						<span asp-validation-for="TechnologyRequired" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+					<div class="form-floating">
+						<input asp-for="docs" class="form-control btn-primary btn" />
+						<label asp-for="docs" class="control-label"></label>
+						<span asp-validation-for="docs" class="text-danger"></span>
 					</div>
 				</div>
 			</div>
-
-			
 
 
 
