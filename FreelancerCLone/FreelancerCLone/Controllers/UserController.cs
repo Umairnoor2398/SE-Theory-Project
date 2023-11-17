@@ -154,9 +154,6 @@ namespace FreelancerCLone.Controllers
 				db.SaveChanges();
 			}
 
-
-
-
 			return RedirectToAction("Projects");
 		}
 
@@ -175,15 +172,34 @@ namespace FreelancerCLone.Controllers
 		}
 
 
-		public IActionResult Create()
+		public IActionResult AddUserSkills()
 		{
-			return View();
+			ViewBag.skills = DropdownUtility.Instance.getSelectList(User.Identity.Name);
+			return PartialView("UserSkillsCreateEditPartialView");
 		}
+
 		[HttpPost]
-		public IActionResult Create(UserViewModel user)
+		public IActionResult AddUserSkills(UserSkill model)
 		{
-			UserUtility.Instance.AddUser(user);
-			return RedirectToAction("Index");
+			model.UserId = UserUtility.Instance.GetUserId(User.Identity.Name);
+			model.AddedOn = DateTime.Now;
+			model.UpdatedOn = DateTime.Now;
+			model.IsActive = true;
+			FreelancerDbContext db = new FreelancerDbContext();
+			db.UserSkills.Add(model);
+			db.SaveChanges();
+			return RedirectToAction("Skills");
+		}
+
+		public IActionResult DeleteUserSkills(int Id)
+		{
+			FreelancerDbContext db = new FreelancerDbContext();
+
+			var skill = db.UserSkills.Find(Id);
+			skill.IsActive = false;
+			db.UserSkills.Update(skill);
+			db.SaveChanges();
+			return RedirectToAction("Skills");
 		}
 	}
 }

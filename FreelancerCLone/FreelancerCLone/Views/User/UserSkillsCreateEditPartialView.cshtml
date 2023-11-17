@@ -19,13 +19,14 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<form asp-action="CreateSkill" enctype="multipart/form-data">
+				<form asp-action="AddUserSkills" enctype="multipart/form-data">
 					<input asp-for="Id" value="@ViewBag.Id" hidden />
 
 
 					<div class="form-floating">
-
-						<input asp-for="SkillId" class="form-control" />
+						<select asp-for="SkillId" asp-action="" asp-items="ViewBag.skills" class="form-select" aria-label="Default select example">
+							
+						</select>
 						<label asp-for="SkillId" class="control-label"></label>
 						<span asp-validation-for="SkillId" class="text-danger"></span>
 					</div>

@@ -140,6 +140,7 @@ namespace FreelancerCLone.Areas.Identity.Pages.Account
 					var userId = await _userManager.GetUserIdAsync(user);
 					u.UserId = userId;
 					db.Users.Add(u);
+					db.SaveChanges();
 					var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 					code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 					var callbackUrl = Url.Page(

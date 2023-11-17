@@ -9,161 +9,161 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FreelancerCLone
 build_property.RootNamespace = FreelancerCLone
-build_property.ProjectDir = C:\Users\Umair Noor\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\
+build_property.ProjectDir = C:\Users\Bisma\OneDrive\Desktop\Desktop\SE\SE Lab\SELabProject\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Umair Noor\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone
+build_property.MSBuildProjectDirectory = C:\Users\Bisma\OneDrive\Desktop\Desktop\SE\SE Lab\SELabProject\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Home/Index.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Home/Privacy.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Project/Create.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Project/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Project/Index.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Project/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Shared/Error.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Skills/Categories.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Skills/Categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxzXENhdGVnb3JpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Skills/Index.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Skills/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Skills/SkillsCategoryCreateEditPartialView.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Skills/SkillsCategoryCreateEditPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxzXFNraWxsc0NhdGVnb3J5Q3JlYXRlRWRpdFBhcnRpYWxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Skills/SkillsCreateEditPartialView.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Skills/SkillsCreateEditPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxzXFNraWxsc0NyZWF0ZUVkaXRQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/CreateEditProject.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/CreateEditProject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGVFZGl0UHJvamVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/Profile.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/Projects.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/Projects.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9qZWN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/Skills.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/Skills.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTa2lsbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/UserSkillsCreateEditPartialView.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/User/UserSkillsCreateEditPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyU2tpbGxzQ3JlYXRlRWRpdFBhcnRpYWxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/_ViewImports.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/_ViewStart.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Umair Noor/Desktop/FreeLancerClone.github.io/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Shared/_Layout.cshtml]
+[C:/Users/Bisma/OneDrive/Desktop/Desktop/SE/SE Lab/SELabProject/FreeLancerClone.github.io/FreelancerCLone/FreelancerCLone/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-pfows4c8ql

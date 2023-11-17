@@ -7,8 +7,9 @@
 <h1>Skills</h1>
 
 <p>
-	<a asp-action="Create">Create New</a>
+	<a data-toggle="modal" class="btn btn-primary" data-target="#skillModal" onclick="addSkillsCategory()">Create New</a>
 </p>
+<div id="addDiv"></div>
 <table class="table">
 	<thead>
 		<tr>
@@ -27,11 +28,23 @@
 					@Html.DisplayFor(modelItem => item.Skill.Id)
 				</td>
 				<td>
-					<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-					<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-					<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+					<a asp-action="DeleteUserSkills" asp-route-id="@item.Id">Delete</a>
 				</td>
 			</tr>
 		}
 	</tbody>
 </table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	function addSkillsCategory() {
+		$.ajax({
+			type: "Get",
+			url: "/User/AddUserSkills",
+			success: function (result) {
+				$("#addDiv").html(result);
+				$("#skillModal").modal('show');
+			}
+		})
+	}
+</script>
