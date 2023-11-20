@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FreelancerCLone.DbModels.ProjectBid>
+
+@{
+    ViewData["Title"] = "AssignedProjects";
+}
+
+<h1>AssignedProjects</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Project Title
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Bid Amount
+            </th>
+            <th>
+                Deadline
+            </th>
+            <th>
+                Rating
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Project.Title
+                </td>
+                <td>
+                    @item.StatusNavigation.Value
+                </td>
+                <td>
+                    @item.BidBudget
+                </td>
+                <td>
+                    @item.BidDeadline
+                </td>
+                @if (item.IsReviewed == false)
+                {
+                    <td>Not Reviewed Yet</td>
+                    @if (item.IsCompleted == false)
+                    {
+                        <td><a asp-action="ChangeProjectCompleteness" asp-route-id="@item.Id">Mark as Completed</a></td>
+                    }
+                    else
+                    {
+                        <td><a asp-action="ChangeProjectCompleteness" asp-route-id="@item.Id">Mark as Un-Completed</a></td>
+                    }
+                }
+                else
+                {
+                    @if (item.Rating == null)
+                    {
+                        <td>Not Rated Yet</td>
+                    }
+                    else
+                    {
+                        <td>@item.Rating</td>
+                    }
+                    <td></td>
+                }
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a>
+                    @if (item.StatusNavigation.Value != "Accepted")
+                    {
+                        <a asp-action="DeleteBid" asp-route-id="@item.Id">Delete</a>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

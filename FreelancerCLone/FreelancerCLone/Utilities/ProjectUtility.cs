@@ -114,6 +114,13 @@ namespace FreelancerCLone.Utilities
             return pro;
         }
 
+        public List<ProjectBid> GetUserBids(int UserId)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+            var userBids = db.ProjectBids.Where(x => x.UserId == UserId && x.IsActive == true).ToList();
+            return userBids;
+        }
+
         public void UpdateProject(ProjectViewModel updatedProject)
         {
             using (FreelancerDbContext db = new FreelancerDbContext())
