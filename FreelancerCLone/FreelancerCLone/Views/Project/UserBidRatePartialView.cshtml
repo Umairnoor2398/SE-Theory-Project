@@ -1,0 +1,45 @@
+﻿@model FreelancerCLone.DbModels.ProjectBid
+
+@{
+    Layout = null;
+}
+
+<div class="modal fade" id="BidRateModal" tabindex="-1" aria-labelledby="BidRateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @if (ViewBag.Id != 0)
+                {
+                    <h1 class="modal-title fs-5" id="BidRateModalLabel">Edit</h1>
+                }
+                else
+                {
+                    <h1 class="modal-title fs-5" id="BidRateModalLabel">Create</h1>
+                }
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="BidRatePost" enctype="multipart/form-data">
+                    <input asp-for="Id" value="@ViewBag.BidId" hidden />
+
+
+                    <div class="form-group">
+                        <label asp-for="Rating" class="control-label">Provide your Experience with this Freelancer</label>
+                        <input type="range" min="0" max="5" step="0.5" asp-for="Rating" class="form-range" oninput="document.getElementById('rangeValLabel').innerHTML = this.value;" />
+                        <span asp-validation-for="Rating" class="text-danger"></span>
+                    </div>
+
+                    <em id="rangeValLabel" style="font-style: normal;"></em>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

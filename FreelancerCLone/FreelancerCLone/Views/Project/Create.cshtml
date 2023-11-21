@@ -1,158 +1,159 @@
 ﻿@model FreelancerCLone.ViewModels.ProjectViewModel
 
 @{
-	if(ViewBag.Id==0)
-	{
-		ViewData["Title"] = "Create Project ";
-	}
-	else
-	{
-		ViewData["Title"] = "Edit Project";
-	}
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    if (ViewBag.Id == 0)
+    {
+        ViewData["Title"] = "Create Project ";
+    }
+    else
+    {
+        ViewData["Title"] = "Edit Project";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
-	window.onerror = null;
-	tinymce.init({
-		selector: '#tiny',
-		plugins: 'anchor autolink charmap codesample emoticons imagetools image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-		toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-		image_title: true,
-		automatic_uploads: true,
-		file_picker_ypes: 'image',
-		file_picker_callback: function (cb, value, meta) {
-			var input = document.createElement('input');
-			input.setAttribute('type', 'file');
-			input.setAttribute('accept', 'image/*');
-			input.onchange = function () {
-				var file = this.files[0];
-				var reader = new FileReader();
-				reader.onload = function () {
-					var id = 'blobid' + (new Date()).getTime();
-					var blobCache = tinymce.activeEditor.editorUpload.blobCache;
-					var base64 = reader.result.split(',')[1];
-					var blobInfo = blobCache.create(id, file, base64);
-					blobCache.add(blobInfo);
+    window.onerror = null;
+    tinymce.init({
+        selector: '#tiny',
+        plugins: 'anchor autolink charmap codesample emoticons imagetools image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        image_title: true,
+        automatic_uploads: true,
+        file_picker_ypes: 'image',
+        file_picker_callback: function (cb, value, meta) {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+            input.onchange = function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var id = 'blobid' + (new Date()).getTime();
+                    var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                    var base64 = reader.result.split(',')[1];
+                    var blobInfo = blobCache.create(id, file, base64);
+                    blobCache.add(blobInfo);
 
-					cb(blobInfo.blobUri(), { title: file.name });
-				};
-				reader.readAsDataURL(file);
-			};
-			input.click();
-		},
-		tinycomments_mode: 'embedded',
-		tinycomments_author: 'Author name',
-		mergetags_list: [
-			{ value: 'First.Name', title: 'First Name' },
-			{ value: 'Email', title: 'Email' },
-		]
-	});
+                    cb(blobInfo.blobUri(), { title: file.name });
+                };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        },
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+        ]
+    });
 </script>
 <style>
-	.tox-notifications-container {
-		display: none;
-	}
+    .tox-notifications-container {
+        display: none;
+    }
 
 </style>
 
 <style>
-	.form-control {
-		max-width: 100% !important;
-	}
+    .form-control {
+        max-width: 100% !important;
+    }
 </style>
 <div class="my-5">
-	<h3 class="d-flex justify-content-between align-items-center">
-		@ViewData["Title"]
+    <h3 class="d-flex justify-content-between align-items-center">
+        @ViewData["Title"]
 
-	</h3>
-	<hr>
+    </h3>
+    <hr>
 </div>
 
 
 
 
 <div class="card" style="align-items:center">
-	<div class="card-body col-lg-12 col-md-12 col-sm-12 col-12" style="align-items:center">
-		<form asp-action="Create" enctype="multipart/form-data">
-			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-			<div class="row">
-				<div class="col-12">
-					<div class="form-floating">
-						<label asp-for="Title" class="control-label"></label>
-						<input asp-for="Title" class="form-control" />
-						<span asp-validation-for="Title" class="text-danger"></span>
-					</div>
-				</div>
-			</div>
+    <div class="card-body col-lg-12 col-md-12 col-sm-12 col-12" style="align-items:center">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Id" value="@ViewBag.Id" hidden />
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-floating">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
 
 
-			<div class="row">
-				<div class=" col-12 ">
-					<div class="form-floating form-group">
-						<textarea id="tiny" asp-for="Description" class="form-control"></textarea>
-						<label asp-for="Description" class="control-label"></label>
-						<span asp-validation-for="Description" class="text-danger"></span>
-					</div>
-				</div>
-			</div>
+            <div class="row">
+                <div class=" col-12 ">
+                    <div class="form-floating form-group">
+                        <textarea id="tiny" asp-for="Description" class="form-control"></textarea>
+                        <label asp-for="Description" class="control-label"></label>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
 
 
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
-					<div class="form-floating">
-						<input asp-for="Budget" class="form-control" />
-						<label asp-for="Budget" class="control-label"></label>
-						<span asp-validation-for="Budget" class="text-danger"></span>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
-					<div class="form-floating">
-						<input asp-for="Deadline" class="form-control" />
-						<label asp-for="Deadline" class="control-label"></label>
-						<span asp-validation-for="Deadline" class="text-danger"></span>
-					</div>
-				</div>
-			</div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-floating">
+                        <input asp-for="Budget" class="form-control" />
+                        <label asp-for="Budget" class="control-label"></label>
+                        <span asp-validation-for="Budget" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-floating">
+                        <input asp-for="Deadline" class="form-control" />
+                        <label asp-for="Deadline" class="control-label"></label>
+                        <span asp-validation-for="Deadline" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
 
 
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
-					<div class="form-floating">
-						<input asp-for="TechnologyRequired" class="form-control" />
-						<label asp-for="TechnologyRequired" class="control-label"></label>
-						<span asp-validation-for="TechnologyRequired" class="text-danger"></span>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
-					<div class="form-floating">
-						<input asp-for="docs" class="form-control btn-primary btn" />
-						<label asp-for="docs" class="control-label"></label>
-						<span asp-validation-for="docs" class="text-danger"></span>
-					</div>
-				</div>
-			</div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-floating">
+                        <input asp-for="TechnologyRequired" class="form-control" />
+                        <label asp-for="TechnologyRequired" class="control-label"></label>
+                        <span asp-validation-for="TechnologyRequired" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-floating">
+                        <input asp-for="docs" class="form-control btn-primary btn" />
+                        <label asp-for="docs" class="control-label"></label>
+                        <span asp-validation-for="docs" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
 
 
 
-			<div class="row justify-content-end" style="margin-top:10px">
-				<div class="col-md-2 col-6">
-					<button type="button" class="btn btn-raised btn-secondary">
-						<i class="fa fa-times"></i>  <span>Cancel</span>
-					</button>
-				</div>
+            <div class="row justify-content-end" style="margin-top:10px">
+                <div class="col-md-2 col-6">
+                    <button type="button" class="btn btn-raised btn-secondary">
+                        <i class="fa fa-times"></i>  <span>Cancel</span>
+                    </button>
+                </div>
 
-				<div class="col-md-2 col-6">
-					<button type="submit" class="btn btn-raised btn-primary">
-						<i class="fa fa-check"></i> <span>Save</span>
-					</button>
-				</div>
-			</div>
+                <div class="col-md-2 col-6">
+                    <button type="submit" class="btn btn-raised btn-primary">
+                        <i class="fa fa-check"></i> <span>Save</span>
+                    </button>
+                </div>
+            </div>
 
 
-		</form>
-	</div>
+        </form>
+    </div>
 </div>
 
 

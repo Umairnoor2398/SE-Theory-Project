@@ -19,12 +19,40 @@ namespace FreelancerCLone.Controllers
             var pro = ProjectUtility.Instance.GetProjects();
             return View(pro);
         }
-
+        [Authorize]
         public IActionResult AssignedProjects()
         {
             int UserId = UserUtility.Instance.GetUserId(User.Identity.Name);
             var userBids = ProjectUtility.Instance.GetUserBids(UserId);
             return View(userBids);
+        }
+
+        [Authorize]
+        public IActionResult MyProjects()
+        {
+            int UserId = UserUtility.Instance.GetUserId(User.Identity.Name);
+            var userBids = ProjectUtility.Instance.GetUserAddedProjects(UserId);
+            return View(userBids);
+        }
+
+        public IActionResult UserBidRate(int Id)
+        {
+            ViewBag.BidId = Id;
+            return PartialView("UserBidRatePartialView");
+        }
+
+        [HttpPost]
+        public IActionResult BidRatePost(ProjectBid model)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+
+            var bid = db.ProjectBids.Find(model.Id);
+            bid.Rating = model.Rating;
+            bid.IsReviewed = true;
+            bid.UpdatedOn = DateTime.Now;
+            db.ProjectBids.Update(bid);
+            db.SaveChanges();
+            return RedirectToAction("MyProjects");
         }
 
         public IActionResult Details(int Id)
@@ -93,8 +121,25 @@ namespace FreelancerCLone.Controllers
         }
 
         [Authorize]
-        public IActionResult Create()
+        public IActionResult Create(int Id = 0)
         {
+            ViewBag.Id = Id;
+            if (Id != 0)
+            {
+                FreelancerDbContext db = new FreelancerDbContext();
+                var p = db.Projects.Find(Id);
+                ProjectViewModel viewModel = new ProjectViewModel();
+                viewModel.Id = p.Id;
+                viewModel.Title = p.Title;
+                viewModel.Description = p.Description;
+                viewModel.Deadline = p.Deadline;
+                viewModel.IsActive = p.IsActive;
+                viewModel.Status = p.Status;
+                viewModel.TechnologyRequired = p.TechnologyRequired;
+                viewModel.Budget = p.Budget;
+                viewModel.ProjectBids = p.ProjectBids;
+                return View(viewModel);
+            }
             return View();
         }
 
@@ -102,8 +147,25 @@ namespace FreelancerCLone.Controllers
         [Authorize]
         public async Task<IActionResult> Create(ProjectViewModel project)
         {
-            await ProjectUtility.Instance.AddProject(project, User.Identity.Name, _webHostEnvironment);
-            return View();
+            if (project.Id == 0)
+            {
+                await ProjectUtility.Instance.AddProject(project, User.Identity.Name, _webHostEnvironment);
+            }
+            else
+            {
+                // Implement the Edit Functionailty
+            }
+            return RedirectToAction("MyProjects");
+        }
+
+        public async Task<IActionResult> Delete(int Id)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+            var project = db.Projects.Find(Id);
+            project.IsActive = false;
+            db.Projects.Update(project);
+            db.SaveChanges();
+            return RedirectToAction("MyProjects");
         }
 
     }

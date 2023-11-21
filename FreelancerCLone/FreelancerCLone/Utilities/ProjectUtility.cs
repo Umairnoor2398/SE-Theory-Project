@@ -95,9 +95,9 @@ namespace FreelancerCLone.Utilities
 
         public List<ProjectViewModel> GetProjects()
         {
-            List<ProjectViewModel> pro = new List<ProjectViewModel>();
             FreelancerDbContext db = new FreelancerDbContext();
             var projects = db.Projects.ToList();
+            List<ProjectViewModel> pro = new List<ProjectViewModel>();
             foreach (var p in projects)
             {
                 ProjectViewModel viewModel = new ProjectViewModel();
@@ -119,6 +119,30 @@ namespace FreelancerCLone.Utilities
             FreelancerDbContext db = new FreelancerDbContext();
             var userBids = db.ProjectBids.Where(x => x.UserId == UserId && x.IsActive == true).ToList();
             return userBids;
+        }
+
+        public List<ProjectViewModel> GetUserAddedProjects(int UserId)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+            var userProjects = db.Projects.Where(x => x.AddedBy == UserId).ToList();
+
+            List<ProjectViewModel> pro = new List<ProjectViewModel>();
+            foreach (var p in userProjects)
+            {
+                ProjectViewModel viewModel = new ProjectViewModel();
+                viewModel.Id = p.Id;
+                viewModel.Title = p.Title;
+                viewModel.Description = p.Description;
+                viewModel.Deadline = p.Deadline;
+                viewModel.IsActive = p.IsActive;
+                viewModel.Status = p.Status;
+                viewModel.TechnologyRequired = p.TechnologyRequired;
+                viewModel.Budget = p.Budget;
+                viewModel.ProjectBids = p.ProjectBids;
+                pro.Add(viewModel);
+            }
+            return pro;
+
         }
 
         public void UpdateProject(ProjectViewModel updatedProject)
