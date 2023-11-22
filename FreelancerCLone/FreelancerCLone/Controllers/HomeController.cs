@@ -1,4 +1,5 @@
 ﻿using FreelancerCLone.Models;
+using FreelancerCLone.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -16,6 +17,13 @@ namespace FreelancerCLone.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Feedback()
+        {
+            ViewBag.Categories = LookupUtility.Instance.getSelectList(Constants.LookupCategory.FEEDBACK_CATEGORY);
+            return View();
+
         }
 
         public IActionResult Privacy()

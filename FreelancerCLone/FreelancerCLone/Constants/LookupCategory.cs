@@ -3,5 +3,6 @@
     public enum LookupCategory
     {
         STATUS,
+        FEEDBACK_CATEGORY,
     }
 }

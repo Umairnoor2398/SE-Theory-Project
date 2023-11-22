@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bisma\\Downloads\\Project Rating\\Project Rating\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj": {}
+    "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bisma\\Downloads\\Project Rating\\Project Rating\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj": {
+    "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bisma\\Downloads\\Project Rating\\Project Rating\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
+        "projectUniqueName": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
         "projectName": "FreelancerCLone",
-        "projectPath": "C:\\Users\\Bisma\\Downloads\\Project Rating\\Project Rating\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
+        "projectPath": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
         "packagesPath": "C:\\Users\\Bisma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bisma\\Downloads\\Project Rating\\Project Rating\\FreelancerCLone\\FreelancerCLone\\obj\\",
+        "outputPath": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bisma\\AppData\\Roaming\\NuGet\\NuGet.Config",

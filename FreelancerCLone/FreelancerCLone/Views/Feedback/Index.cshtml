@@ -1,0 +1,60 @@
+﻿@model IEnumerable<FreelancerCLone.DbModels.Feedback>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div id="addDiv"></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                User
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.AddedByNavigation.FirstName @item.AddedByNavigation.LastName
+                </td>
+                <td>
+                    @item.Category.Value
+                </td>
+                <td>
+                    @item.AddedOn
+                </td>
+                <td>
+                    <a data-toggle="modal" class="btn btn-secondary" data-target="#FeedbackDetailsModal" onclick="addFeedbackDetailsModal(@item.Id)">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function addFeedbackDetailsModal(id) {
+        $.ajax({
+            type: "Get",
+            url: "/Feedback/Details",
+            data: { Id: id },
+            success: function (result) {
+                $("#addDiv").html(result);
+                $("#FeedbackDetailsModal").modal('show');
+            }
+        })
+    }
+</script>

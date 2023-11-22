@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9QYxOXrNYmTjVVrowv9iBU+f4kdmMHy5ELr3Eaa71dD7HIS+G95UOiPDE9ckzLiiOTOyCwbKMRyR4S+S9Xf3/g==",
+  "dgSpecHash": "Utg8PgbNdZ6paSo+xmR7egPoH9f8VOfNJktGAF+GI1ukdeMIfZORsQdMOBW9Dn4tjv4NqCxKG5fCorW38/iMlQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bisma\\Downloads\\Project Rating\\Project Rating\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
+  "projectFilePath": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\FreelancerCLone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bisma\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Bisma\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
