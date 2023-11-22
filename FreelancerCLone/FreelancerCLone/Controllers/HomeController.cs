@@ -1,6 +1,8 @@
 ﻿using FreelancerCLone.Models;
+using FreelancerCLone.Services;
 using FreelancerCLone.Utilities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 
 namespace FreelancerCLone.Controllers
@@ -21,7 +23,15 @@ namespace FreelancerCLone.Controllers
 
         public IActionResult Feedback()
         {
-            ViewBag.Categories = LookupUtility.Instance.getSelectList(Constants.LookupCategory.FEEDBACK_CATEGORY);
+            try
+            {
+                ViewBag.Categories = LookupUtility.Instance.getSelectList(Constants.LookupCategory.FEEDBACK_CATEGORY);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Categories = new List<SelectListItem>();
+                ErrorLogger.Instance.ErrorLoggingFunction(ex.Message, this.ToString());
+            }
             return View();
 
         }
