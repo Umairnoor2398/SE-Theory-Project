@@ -1,5 +1,6 @@
 ﻿using FreelancerCLone.DbModels;
 using FreelancerCLone.Services;
+using FreelancerCLone.Utilities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FreelancerCLone.Controllers
@@ -15,8 +16,7 @@ namespace FreelancerCLone.Controllers
                 ViewBag.CategoryId = category;
                 try
                 {
-                    FreelancerDbContext db = new FreelancerDbContext();
-                    skills = db.Skills.Where(x => x.SkillCategoryId == category).ToList();
+                    skills = SkillsUtility.Instance.GetSkillsOfCategory(category);
                 }
                 catch (Exception ex)
                 {
@@ -27,13 +27,14 @@ namespace FreelancerCLone.Controllers
             return View();
         }
 
+
+
         public IActionResult Categories()
         {
             List<SkillCategory> skillCategories = new List<SkillCategory>();
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                skillCategories = db.SkillCategories.ToList();
+                skillCategories = SkillsUtility.Instance.GetSkillCategories();
             }
             catch (Exception ex)
             {
@@ -42,6 +43,8 @@ namespace FreelancerCLone.Controllers
             return View(skillCategories);
         }
 
+
+
         public IActionResult CreateCategory(int id = 0)
         {
             ViewBag.Id = id;
@@ -49,8 +52,7 @@ namespace FreelancerCLone.Controllers
             {
                 try
                 {
-                    FreelancerDbContext db = new FreelancerDbContext();
-                    var skillCategory = db.SkillCategories.Find(id);
+                    SkillCategory skillCategory = SkillsUtility.Instance.GetCategoryById(id);
                     return PartialView("SkillsCategoryCreateEditPartialView", skillCategory);
                 }
                 catch (Exception ex)
@@ -60,31 +62,22 @@ namespace FreelancerCLone.Controllers
             }
             return PartialView("SkillsCategoryCreateEditPartialView");
         }
+
+
+
         [HttpPost]
         public IActionResult CreateCategory(SkillCategory model)
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
                 if (model.Id != 0)
                 {
-                    var skillCategory = db.SkillCategories.Find(model.Id);
-                    skillCategory.CategoryName = model.CategoryName;
-                    skillCategory.UpdatedOn = DateTime.Now;
-                    db.SkillCategories.Update(skillCategory);
-
+                    SkillsUtility.Instance.EditSkillCategory(model);
                 }
                 else
                 {
-                    SkillCategory skillCategory = new SkillCategory();
-                    skillCategory.CategoryName = model.CategoryName;
-                    skillCategory.AddedOn = DateTime.Now;
-                    skillCategory.UpdatedOn = DateTime.Now;
-                    skillCategory.IsActive = true;
-
-                    db.SkillCategories.Add(skillCategory);
+                    SkillsUtility.Instance.AddSkillCategory(model);
                 }
-                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -94,18 +87,22 @@ namespace FreelancerCLone.Controllers
         }
 
 
+
         public IActionResult CreateSkill(string ID = "")
         {
             try
             {
                 ID += " 0";
                 var ids = ID.Split(" ");
-                ViewBag.Id = Convert.ToInt32(ids[1]);
+                int skillId = Convert.ToInt32(ids[1]);
+
+
+                ViewBag.Id = skillId;
                 ViewBag.CategoryId = Convert.ToInt32(ids[0]);
-                if (Convert.ToInt32(ids[1]) != 0)
+
+                if (skillId != 0)
                 {
-                    FreelancerDbContext db = new FreelancerDbContext();
-                    var skill = db.Skills.Find(Convert.ToInt32(ids[1]));
+                    Skill skill = SkillsUtility.Instance.GetSkillById(skillId);
                     return PartialView("SkillsCreateEditPartialView", skill);
                 }
             }
@@ -115,32 +112,22 @@ namespace FreelancerCLone.Controllers
             }
             return PartialView("SkillsCreateEditPartialView");
         }
+
+
+
         [HttpPost]
         public IActionResult CreateSkill(Skill model)
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
                 if (model.Id != 0)
                 {
-                    var skill = db.Skills.Find(model.Id);
-                    skill.SkillName = model.SkillName;
-                    skill.UpdatedOn = DateTime.Now;
-                    db.Skills.Update(skill);
-
+                    SkillsUtility.Instance.EditSkill(model);
                 }
                 else
                 {
-                    Skill skill = new Skill();
-                    skill.SkillName = model.SkillName;
-                    skill.SkillCategoryId = model.SkillCategoryId;
-                    skill.AddedOn = DateTime.Now;
-                    skill.UpdatedOn = DateTime.Now;
-                    skill.IsActive = true;
-
-                    db.Skills.Add(skill);
+                    SkillsUtility.Instance.AddSkill(model);
                 }
-                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -149,17 +136,13 @@ namespace FreelancerCLone.Controllers
             return RedirectToAction("Index", new { category = model.SkillCategoryId });
         }
 
+
+
         public IActionResult DeleteCategory(int Id)
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                var skillCategory = db.SkillCategories.Find(Id);
-
-                skillCategory.IsActive = !skillCategory.IsActive;
-
-                db.SkillCategories.Update(skillCategory);
-                db.SaveChanges();
+                SkillsUtility.Instance.DeleteCategoryById(Id);
             }
             catch (Exception ex)
             {
@@ -168,19 +151,15 @@ namespace FreelancerCLone.Controllers
             return RedirectToAction("Categories");
         }
 
+
+
         public IActionResult DeleteSkill(int Id)
         {
             Skill skill = new Skill();
 
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                skill = db.Skills.Find(Id);
-
-                skill.IsActive = !skill.IsActive;
-
-                db.Skills.Update(skill);
-                db.SaveChanges();
+                skill = SkillsUtility.Instance.DeleteSkillById(Id);
             }
             catch (Exception ex)
             {
@@ -188,5 +167,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("Index", new { category = skill.SkillCategoryId });
         }
+
+
     }
 }

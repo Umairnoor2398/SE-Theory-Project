@@ -168,18 +168,95 @@ namespace FreelancerCLone.Utilities
             }
         }
 
-        public void DeleteProject(int projectId)
+        public void RateUserProjectBid(ProjectBid model)
         {
-            using (FreelancerDbContext db = new FreelancerDbContext())
-            {
-                Project projectToDelete = db.Projects.Find(projectId);
-                if (projectToDelete != null)
-                {
-                    db.Projects.Remove(projectToDelete);
-                    db.SaveChanges();
-                }
-            }
+            FreelancerDbContext db = new FreelancerDbContext();
+
+            var bid = db.ProjectBids.Find(model.Id);
+            bid.Rating = model.Rating;
+            bid.IsReviewed = true;
+            bid.UpdatedOn = DateTime.Now;
+            db.ProjectBids.Update(bid);
+            db.SaveChanges();
         }
+
+        public Project GetProject(int Id)
+        {
+            Project project;
+            FreelancerDbContext db = new FreelancerDbContext();
+            project = db.Projects.Find(Id);
+            return project;
+        }
+
+        public void AddProjectBid(ProjectBid model, string username)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+            model.IsActive = true;
+            model.AddedOn = DateTime.Now;
+            model.UpdatedOn = DateTime.Now;
+            model.IsReviewed = false;
+            model.IsCompleted = false;
+            model.Status = db.Lookups.Where(x => x.Value == "Pending").FirstOrDefault().Id;
+            model.Rating = 0;
+            model.UserId = UserUtility.Instance.GetUserId(username);
+            db.ProjectBids.Add(model);
+            db.SaveChanges();
+        }
+
+        public void ApproveUserProjectBid(int BidId)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+
+            var bid = db.ProjectBids.Find(BidId);
+            bid.Status = LookupUtility.Instance.getId("Accepted");
+            db.ProjectBids.Update(bid);
+            db.SaveChanges();
+        }
+        public void DeleteUserProjectBid(int Id)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+            var bid = db.ProjectBids.Find(Id);
+            bid.IsActive = false;
+            db.ProjectBids.Update(bid);
+            db.SaveChanges();
+        }
+
+        public void UpdateProjectCompleteStatus(int Id)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+            var bid = db.ProjectBids.Find(Id);
+            bid.IsCompleted = !bid.IsCompleted;
+            db.ProjectBids.Update(bid);
+            db.SaveChanges();
+        }
+
+        public ProjectViewModel GetProjectViewModel(int Id)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+            var p = db.Projects.Find(Id);
+            ProjectViewModel viewModel = new ProjectViewModel();
+            viewModel.Id = p.Id;
+            viewModel.Title = p.Title;
+            viewModel.Description = p.Description;
+            viewModel.Deadline = p.Deadline;
+            viewModel.IsActive = p.IsActive;
+            viewModel.Status = p.Status;
+            viewModel.TechnologyRequired = p.TechnologyRequired;
+            viewModel.Budget = p.Budget;
+            viewModel.ProjectBids = p.ProjectBids;
+            return viewModel;
+        }
+
+        public void DeleteProject(int Id)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+            var project = db.Projects.Find(Id);
+            project.IsActive = false;
+            db.Projects.Update(project);
+            db.SaveChanges();
+        }
+
+
     }
 
 

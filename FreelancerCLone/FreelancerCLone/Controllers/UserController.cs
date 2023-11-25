@@ -28,16 +28,7 @@ namespace FreelancerCLone.Controllers
 
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                if (user == 0)
-                {
-                    int userId = UserUtility.Instance.GetUserId(User.Identity.Name);
-                    userDb = db.Users.Find(userId);
-                }
-                else
-                {
-                    userDb = db.Users.Find(user);
-                }
+                userDb = UserUtility.Instance.GetUserForProfile(user, User.Identity.Name);
             }
             catch (Exception ex)
             {
@@ -47,20 +38,14 @@ namespace FreelancerCLone.Controllers
             return View(userDb);
         }
 
+
+
         public IActionResult Projects(int user = 0)
         {
             List<FreelancerPersonalProject> freelancerProjects = new List<FreelancerPersonalProject>();
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-
-                int userId = user;
-
-                if (user == 0)
-                {
-                    userId = UserUtility.Instance.GetUserId(User.Identity.Name);
-                }
-                freelancerProjects = db.FreelancerPersonalProjects.Where(x => x.UserId == userId).ToList();
+                freelancerProjects = UserUtility.Instance.GetFreelancerPersonalProjects(user,User.Identity.Name);
             }
             catch (Exception ex)
             {
@@ -70,6 +55,8 @@ namespace FreelancerCLone.Controllers
             return View(freelancerProjects);
         }
 
+
+
         public IActionResult CreateEditProject(int id = 0)
         {
             ViewBag.Id = id;
@@ -77,23 +64,7 @@ namespace FreelancerCLone.Controllers
             {
                 try
                 {
-                    FreelancerDbContext db = new FreelancerDbContext();
-                    var project = db.FreelancerPersonalProjects.Find(id);
-
-                    FreelancerPersonalProjectViewModel viewModel = new FreelancerPersonalProjectViewModel();
-                    viewModel.Id = project.Id;
-                    viewModel.Title = project.Title;
-                    viewModel.Description = project.Description;
-                    viewModel.StartDate = project.StartDate;
-                    viewModel.EndDate = project.EndDate;
-                    viewModel.Technology = project.Technology;
-                    viewModel.PublicUrl = project.PublicUrl;
-                    viewModel.UserId = project.UserId;
-                    viewModel.AddedOn = project.AddedOn;
-                    viewModel.UpdatedOn = project.UpdatedOn;
-                    viewModel.IsActive = project.IsActive;
-                    viewModel.FreelancerPersonalProjectImages = project.FreelancerPersonalProjectImages;
-
+                    FreelancerPersonalProjectViewModel viewModel = UserUtility.Instance.GetFreelancerPersonalProjectViewModel(id);
 
                     return View(viewModel);
                 }
@@ -104,78 +75,22 @@ namespace FreelancerCLone.Controllers
             }
             return View();
         }
+
+
+
         [HttpPost]
         public async Task<IActionResult> CreateEditProject(FreelancerPersonalProjectViewModel model)
         {
 
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
                 if (model.Id == 0)
                 {
-                    FreelancerPersonalProject proj = new FreelancerPersonalProject();
-                    proj.Title = model.Title;
-                    proj.Description = model.Description;
-                    proj.StartDate = model.StartDate;
-                    proj.EndDate = model.EndDate;
-                    proj.Technology = model.Technology;
-                    proj.PublicUrl = model.PublicUrl;
-                    proj.AddedOn = DateTime.Now;
-                    proj.UpdatedOn = DateTime.Now;
-                    proj.IsActive = true;
-
-                    proj.UserId = UserUtility.Instance.GetUserId(User.Identity.Name);
-
-                    db.FreelancerPersonalProjects.Add(proj);
-                    db.SaveChanges();
-
-                    List<FilePathEnum> path = new List<FilePathEnum>();
-
-                    path.Add(FilePathEnum.ProjectImages);
-
-                    foreach (var i in model.images)
-                    {
-                        FreelancerPersonalProjectImage img = new FreelancerPersonalProjectImage();
-                        img.PersonalProjectId = proj.Id;
-                        img.ImagePath = await UploadFileService.Instance.UploadFile(i, path, _webHost);
-                        img.AddedOn = DateTime.Now;
-                        img.UpdatedOn = DateTime.Now;
-                        img.IsActive = true;
-                        db.FreelancerPersonalProjectImages.Add(img);
-                    }
-
-                    db.SaveChanges();
+                    await UserUtility.Instance.AddFreelancerPersonalProject(model, User.Identity.Name, _webHost);
                 }
                 else
                 {
-                    var proj = db.FreelancerPersonalProjects.Find(model.Id);
-                    proj.Title = model.Title;
-                    proj.Description = model.Description;
-                    proj.StartDate = model.StartDate;
-                    proj.EndDate = model.EndDate;
-                    proj.Technology = model.Technology;
-                    proj.PublicUrl = model.PublicUrl;
-                    proj.UpdatedOn = DateTime.Now;
-
-                    db.FreelancerPersonalProjects.Update(proj);
-                    db.SaveChanges();
-
-                    List<FilePathEnum> path = new List<FilePathEnum>();
-
-                    path.Add(FilePathEnum.ProjectImages);
-
-                    foreach (var i in model.images)
-                    {
-                        FreelancerPersonalProjectImage img = new FreelancerPersonalProjectImage();
-                        img.PersonalProjectId = proj.Id;
-                        img.ImagePath = await UploadFileService.Instance.UploadFile(i, path, _webHost);
-                        img.AddedOn = DateTime.Now;
-                        img.UpdatedOn = DateTime.Now;
-                        img.IsActive = true;
-                        db.FreelancerPersonalProjectImages.Add(img);
-                    }
-
-                    db.SaveChanges();
+                    await UserUtility.Instance.EditFreelancerPersonalProject(model, User.Identity.Name, _webHost);
                 }
             }
             catch (Exception ex)
@@ -186,20 +101,14 @@ namespace FreelancerCLone.Controllers
             return RedirectToAction("Projects");
         }
 
+
         public IActionResult Skills(int user = 0)
         {
             List<UserSkill> userSkills = new List<UserSkill>();
 
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-
-                if (user == 0)
-                {
-                    user = UserUtility.Instance.GetUserId(User.Identity.Name);
-                }
-
-                userSkills = db.UserSkills.Where(x => x.UserId == user).ToList();
+                userSkills = UserUtility.Instance.GetUserSkills(user, User.Identity.Name);
             }
             catch (Exception ex)
             {
@@ -208,6 +117,7 @@ namespace FreelancerCLone.Controllers
 
             return View(userSkills);
         }
+
 
 
         public IActionResult AddUserSkills()
@@ -232,9 +142,7 @@ namespace FreelancerCLone.Controllers
                 model.AddedOn = DateTime.Now;
                 model.UpdatedOn = DateTime.Now;
                 model.IsActive = true;
-                FreelancerDbContext db = new FreelancerDbContext();
-                db.UserSkills.Add(model);
-                db.SaveChanges();
+                UserUtility.Instance.AddUserSkill(model);
             }
             catch (Exception ex)
             {
@@ -242,17 +150,14 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("Skills");
         }
+
+
 
         public IActionResult DeleteUserSkills(int Id)
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-
-                var skill = db.UserSkills.Find(Id);
-                skill.IsActive = false;
-                db.UserSkills.Update(skill);
-                db.SaveChanges();
+                UserUtility.Instance.DeleteUserSkill(Id);
             }
             catch (Exception ex)
             {
@@ -260,5 +165,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("Skills");
         }
+
+
     }
 }

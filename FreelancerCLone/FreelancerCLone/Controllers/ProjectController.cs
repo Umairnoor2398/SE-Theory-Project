@@ -71,14 +71,7 @@ namespace FreelancerCLone.Controllers
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-
-                var bid = db.ProjectBids.Find(model.Id);
-                bid.Rating = model.Rating;
-                bid.IsReviewed = true;
-                bid.UpdatedOn = DateTime.Now;
-                db.ProjectBids.Update(bid);
-                db.SaveChanges();
+                ProjectUtility.Instance.RateUserProjectBid(model);
             }
             catch (Exception ex)
             {
@@ -87,14 +80,16 @@ namespace FreelancerCLone.Controllers
             return RedirectToAction("MyProjects");
         }
 
+
+
         public IActionResult Details(int Id)
         {
             Project project = new Project();
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                project = db.Projects.Find(Id);
-                ViewBag.ApprovedId = db.Lookups.Where(x => x.Value == "Accepted").FirstOrDefault().Id;
+                project = ProjectUtility.Instance.GetProject(Id);
+
+                ViewBag.ApprovedId = LookupUtility.Instance.getId("Accepted");
             }
             catch (Exception ex)
             {
@@ -102,6 +97,8 @@ namespace FreelancerCLone.Controllers
             }
             return View(project);
         }
+
+
 
         public IActionResult BidProject(int Id)
         {
@@ -114,17 +111,7 @@ namespace FreelancerCLone.Controllers
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                model.IsActive = true;
-                model.AddedOn = DateTime.Now;
-                model.UpdatedOn = DateTime.Now;
-                model.IsReviewed = false;
-                model.IsCompleted = false;
-                model.Status = db.Lookups.Where(x => x.Value == "Pending").FirstOrDefault().Id;
-                model.Rating = 0;
-                model.UserId = UserUtility.Instance.GetUserId(User.Identity.Name);
-                db.ProjectBids.Add(model);
-                db.SaveChanges();
+                ProjectUtility.Instance.AddProjectBid(model, User.Identity.Name);
             }
             catch (Exception ex)
             {
@@ -134,16 +121,13 @@ namespace FreelancerCLone.Controllers
             return RedirectToAction("Details", new { Id = model.ProjectId });
         }
 
+
+
         public IActionResult ApproveBid(int BidId, int ProjectId)
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-
-                var bid = db.ProjectBids.Find(BidId);
-                bid.Status = db.Lookups.Where(x => x.Value == "Accepted").FirstOrDefault().Id;
-                db.ProjectBids.Update(bid);
-                db.SaveChanges();
+                ProjectUtility.Instance.ApproveUserProjectBid(BidId);
             }
             catch (Exception ex)
             {
@@ -157,11 +141,7 @@ namespace FreelancerCLone.Controllers
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                var bid = db.ProjectBids.Find(Id);
-                bid.IsActive = false;
-                db.ProjectBids.Update(bid);
-                db.SaveChanges();
+                ProjectUtility.Instance.DeleteUserProjectBid(Id);
             }
             catch (Exception ex)
             {
@@ -169,17 +149,14 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("AssignedProjects");
         }
+
 
 
         public IActionResult ChangeProjectCompleteness(int Id)
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                var bid = db.ProjectBids.Find(Id);
-                bid.IsCompleted = !bid.IsCompleted;
-                db.ProjectBids.Update(bid);
-                db.SaveChanges();
+                ProjectUtility.Instance.UpdateProjectCompleteStatus(Id);
             }
             catch (Exception ex)
             {
@@ -187,6 +164,8 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("AssignedProjects");
         }
+
+
 
         [Authorize]
         public IActionResult Create(int Id = 0)
@@ -196,18 +175,7 @@ namespace FreelancerCLone.Controllers
             {
                 try
                 {
-                    FreelancerDbContext db = new FreelancerDbContext();
-                    var p = db.Projects.Find(Id);
-                    ProjectViewModel viewModel = new ProjectViewModel();
-                    viewModel.Id = p.Id;
-                    viewModel.Title = p.Title;
-                    viewModel.Description = p.Description;
-                    viewModel.Deadline = p.Deadline;
-                    viewModel.IsActive = p.IsActive;
-                    viewModel.Status = p.Status;
-                    viewModel.TechnologyRequired = p.TechnologyRequired;
-                    viewModel.Budget = p.Budget;
-                    viewModel.ProjectBids = p.ProjectBids;
+                    ProjectViewModel viewModel = ProjectUtility.Instance.GetProjectViewModel(Id);
                     return View(viewModel);
                 }
                 catch (Exception ex)
@@ -217,6 +185,8 @@ namespace FreelancerCLone.Controllers
             }
             return View();
         }
+
+
 
         [HttpPost]
         [Authorize]
@@ -244,11 +214,7 @@ namespace FreelancerCLone.Controllers
         {
             try
             {
-                FreelancerDbContext db = new FreelancerDbContext();
-                var project = db.Projects.Find(Id);
-                project.IsActive = false;
-                db.Projects.Update(project);
-                db.SaveChanges();
+                ProjectUtility.Instance.DeleteProject(Id);
             }
             catch (Exception ex)
             {
@@ -256,6 +222,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("MyProjects");
         }
+
 
     }
 }
