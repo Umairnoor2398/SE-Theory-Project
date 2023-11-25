@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<FreelancerCLone.DbModels.ProjectBid>
 
 @{
-    ViewData["Title"] = "AssignedProjects";
+    ViewData["Title"] = "Assigned Projects";
 }
 
-<h1>AssignedProjects</h1>
+<h1>Assigned Projects</h1>
 <div class="table-responsive">
     <table class="table data-table">
         <thead>
@@ -24,7 +24,6 @@
                 <th>
                     Rating
                 </th>
-                <th></th>
                 <th></th>
             </tr>
         </thead>
@@ -46,15 +45,17 @@
                     </td>
                     @if (item.IsReviewed == false)
                     {
-                        <td>Not Reviewed Yet</td>
-                        @if (item.IsCompleted == false)
-                        {
-                            <td><a asp-action="ChangeProjectCompleteness" asp-route-id="@item.Id">Mark as Completed</a></td>
-                        }
-                        else
-                        {
-                            <td><a asp-action="ChangeProjectCompleteness" asp-route-id="@item.Id">Mark as Un-Completed</a></td>
-                        }
+                        <td>
+                            Not Reviewed Yet
+                            @if (item.IsCompleted == false)
+                            {
+                                <a asp-action="ChangeProjectCompleteness" asp-route-id="@item.Id">Mark as Completed</a>
+                            }
+                            else
+                            {
+                                <a asp-action="ChangeProjectCompleteness" asp-route-id="@item.Id">Mark as Un-Completed</a>
+                            }
+                        </td>
                     }
                     else
                     {
@@ -66,7 +67,6 @@
                         {
                             <td>@item.Rating</td>
                         }
-                        <td></td>
                     }
                     <td>
                         <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ProjectId">Details</a>

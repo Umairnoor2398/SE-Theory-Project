@@ -25,62 +25,37 @@
 <div>
     <form class="form-inline d-flex justify-content-end justify-content-lg-end" asp-action="Index" asp-controller="Project">
         <div class="search-box mx-3">
-            @* <button class="btn-search"><i class="fas fa-search" style="color: black"></i></button> *@
             <input required name="query" type="text" style="color: black" class="search-input" placeholder="Search for Jobs...">
         </div>
         <button type="submit" class="btn-get-started btn btn-primary">Search</button>
     </form>
 </div>
 
-<div class="table-responsive">
-    <table class="table data-table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Budget)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Deadline)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TechnologyRequired)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AddedOn)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Budget)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Deadline)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TechnologyRequired)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AddedOn)
-                    </td>
-                    <td>
-                        <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        @if (item.ProjectBids.Any(x => x.StatusNavigation.Value == "Accepted"))
+        {
+            continue;
+        }
+        <a class="col-md-6 card p-3 m-2" asp-action="Edit" asp-route-id="@item.Id">
+            <div>
+                <div class="row">
+                    <div class="col-2">
+                        <img height="40" width="40" style="border-radius: 50%;" src="@(string.IsNullOrEmpty(item.AddedByNavigation.ProfileImagePath)?"/DefaultUser.png":item.AddedByNavigation.ProfileImagePath)" alt="" />
+                    </div>
+                    <div class="col-10">
+                        <h3>Client: @item.AddedByNavigation.FirstName @item.AddedByNavigation.LastName</h3>
+                        <h5>Title: @item.Title</h5>
+                    </div>
+                </div>
+                <div>
+                    @Html.Raw(item.Description)
+                </div>
+            </div>
+        </a>
+
+    }
 
 </div>

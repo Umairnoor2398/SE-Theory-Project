@@ -17,21 +17,25 @@
         </div>
 
         <div class="row gx-lg-0 gy-4">
-
+            <div class="col-lg-2"></div>
             <div class="col-lg-8">
                 <form asp-action="Create" asp-controller="Feedback" role="form" class="php-email-form">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" value="@user.FirstName @user.LastName" disabled>
+                            <label class="control-label" for="name">Name</label>
+                            <input name="name" type="text" class="form-control" placeholder="Your Name" value="@user.FirstName @user.LastName" disabled>
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" placeholder="Your Email" value="@user.UserNavigation.Email" disabled>
+                            <label class="control-label" for="email">Email</label>
+                            <input name="email" type="email" class="form-control" placeholder="Your Email" value="@user.UserNavigation.Email" disabled>
                         </div>
                     </div>
                     <div class="form-group mt-3">
+                        <label class="control-label" asp-for="CategoryId">Type</label>
                         <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
                     </div>
                     <div class="form-group mt-3">
+                        <label class="control-label" asp-for="Message">Message</label>
                         <textarea class="form-control" asp-for="Message" rows="7" placeholder="Message" required></textarea>
                     </div>
                     <div class="my-3">
@@ -42,7 +46,7 @@
                     <div class="text-center"><button type="submit">Send Message</button></div>
                 </form>
             </div><!-- End Feedback Form -->
-
+            <div class="col-lg-2"></div>
         </div>
 
     </div>

@@ -1,1 +1,2 @@
 2023-11-25 12:45:26.2438|Error|Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. occurred in FreelancerCLone.Controllers.UserController's Profile method. | 
+2023-11-25 18:31:50.5292|Error|'System.Dynamic.DynamicObject' does not contain a definition for 'isMyprofile' occurred in FreelancerCLone.Controllers.UserController's Profile method. | 
