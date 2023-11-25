@@ -2,15 +2,17 @@
 using FreelancerCLone.DbModels;
 using FreelancerCLone.Services;
 using FreelancerCLone.ViewModels;
-//using Microsoft.CodeAnalysis;
 
 namespace FreelancerCLone.Utilities
 {
-    public class ProjectUtility
+
+	// Utility class for managing project-related operations in the FreelancerClone application
+	public class ProjectUtility
     {
         private static ProjectUtility _instance;
 
-        public static ProjectUtility Instance
+		// Singleton pattern: Ensures only one instance of the ProjectUtility is created
+		public static ProjectUtility Instance
         {
             get
             {
@@ -21,8 +23,9 @@ namespace FreelancerCLone.Utilities
 
 
         }
+		// Adds a new project to the database with associated documents
 
-        public async Task AddProject(ProjectViewModel project, string username, IWebHostEnvironment _webHost)
+		public async Task AddProject(ProjectViewModel project, string username, IWebHostEnvironment _webHost)
         {
             int userId = UserUtility.Instance.GetUserId(username);
             FreelancerDbContext db = new FreelancerDbContext();
@@ -66,13 +69,11 @@ namespace FreelancerCLone.Utilities
 
 
         }
-
-        static string CategorizeFile(string fileName)
+		// Categorizes a file based on its extension
+		static string CategorizeFile(string fileName)
         {
             // Get the file extension
             string fileExtension = Path.GetExtension(fileName).ToLower();
-
-            // Categorize the file based on the extension
             switch (fileExtension)
             {
                 case ".pdf":
@@ -93,8 +94,8 @@ namespace FreelancerCLone.Utilities
                     return "Other";
             }
         }
-
-        public List<ProjectViewModel> GetProjects(string username)
+		// Retrieves a list of projects available for bidding
+		public List<ProjectViewModel> GetProjects(string username)
         {
             int userId = UserUtility.Instance.GetUserId(username);
             int acceptedId = LookupUtility.Instance.getId("Accepted");
@@ -116,15 +117,15 @@ namespace FreelancerCLone.Utilities
             }
             return pro;
         }
-
-        public List<ProjectBid> GetUserBids(int UserId)
+		// Retrieves a list of project bids submitted by a user
+		public List<ProjectBid> GetUserBids(int UserId)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var userBids = db.ProjectBids.Where(x => x.UserId == UserId && x.IsActive == true).ToList();
             return userBids;
         }
-
-        public List<ProjectViewModel> GetUserAddedProjects(int UserId)
+		// Retrieves a list of projects added by a user
+		public List<ProjectViewModel> GetUserAddedProjects(int UserId)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var userProjects = db.Projects.Where(x => x.AddedBy == UserId && x.IsActive == true).ToList();
@@ -147,8 +148,9 @@ namespace FreelancerCLone.Utilities
             return pro;
 
         }
+		// Updates the details of an existing project along with associated documents
 
-        public async Task UpdateProject(ProjectViewModel updatedProject, IWebHostEnvironment _webHostEnvironment)
+		public async Task UpdateProject(ProjectViewModel updatedProject, IWebHostEnvironment _webHostEnvironment)
         {
             using (FreelancerDbContext db = new FreelancerDbContext())
             {
@@ -194,8 +196,8 @@ namespace FreelancerCLone.Utilities
                 }
             }
         }
-
-        public ProjectBid RateUserProjectBid(ProjectBid model)
+		// Rates a user's project bid
+		public ProjectBid RateUserProjectBid(ProjectBid model)
         {
             FreelancerDbContext db = new FreelancerDbContext();
 
@@ -209,7 +211,8 @@ namespace FreelancerCLone.Utilities
             return bid;
         }
 
-        public Project GetProject(int Id)
+		// Retrieves a project by its ID
+		public Project GetProject(int Id)
         {
             Project project;
             FreelancerDbContext db = new FreelancerDbContext();
@@ -217,7 +220,8 @@ namespace FreelancerCLone.Utilities
             return project;
         }
 
-        public ProjectBid AddProjectBid(ProjectBid model, string username)
+		// Adds a new project bid to the database
+		public ProjectBid AddProjectBid(ProjectBid model, string username)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             model.IsActive = true;
@@ -233,7 +237,8 @@ namespace FreelancerCLone.Utilities
             return model;
         }
 
-        public ProjectBid ApproveUserProjectBid(int BidId)
+		// Approves a user's project bid
+		public ProjectBid ApproveUserProjectBid(int BidId)
         {
             FreelancerDbContext db = new FreelancerDbContext();
 
@@ -243,8 +248,11 @@ namespace FreelancerCLone.Utilities
             db.SaveChanges();
 
             return bid;
-        }
-        public void DeleteUserProjectBid(int Id)
+      }
+
+		// Deletes a user's project bid
+
+		public void DeleteUserProjectBid(int Id)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var bid = db.ProjectBids.Find(Id);
@@ -253,7 +261,9 @@ namespace FreelancerCLone.Utilities
             db.SaveChanges();
         }
 
-        public ProjectBid UpdateProjectCompleteStatus(int Id)
+		// Updates the completion status of a project
+
+		public ProjectBid UpdateProjectCompleteStatus(int Id)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var bid = db.ProjectBids.Find(Id);
@@ -264,7 +274,8 @@ namespace FreelancerCLone.Utilities
             return bid;
         }
 
-        public ProjectViewModel GetProjectViewModel(int Id)
+		// Retrieves a ProjectViewModel by its ID
+		public ProjectViewModel GetProjectViewModel(int Id)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var p = db.Projects.Find(Id);
@@ -281,7 +292,8 @@ namespace FreelancerCLone.Utilities
             return viewModel;
         }
 
-        public void DeleteProject(int Id)
+		// Deletes a project by its ID
+		public void DeleteProject(int Id)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var project = db.Projects.Find(Id);

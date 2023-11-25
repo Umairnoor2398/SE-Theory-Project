@@ -5,7 +5,8 @@ using FreelancerCLone.DbModels;
 
 namespace FreelancerCLone.Services
 {
-    public class MailSenderService
+    // Service class responsible for sending emails in the FreelancerClone application
+	public class MailSenderService
     {
         private static MailSenderService _instance;
         private static SmtpClient smtpClient;
@@ -13,7 +14,8 @@ namespace FreelancerCLone.Services
         private static string emailAddress = "";
         private static string password = "";
 
-        public static MailSenderService Instance
+		// Singleton pattern: Ensures only one instance of the MailSenderService is created
+		public static MailSenderService Instance
         {
             get
             {
@@ -33,9 +35,11 @@ namespace FreelancerCLone.Services
             }
         }
 
-        private MailSenderService() { }
 
-        public async Task SendMailToUserOnRegister(string Email, string Name, string code)
+        private MailSenderService() { }
+		// Sends an email to the user for account activation on registration
+
+		public async Task SendMailToUserOnRegister(string Email, string Name, string code)
         {
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(emailAddress);
@@ -51,8 +55,9 @@ namespace FreelancerCLone.Services
             smtpClient.Send(mail);
         }
 
+		// Sends an email to the user on receiving feedback
 
-        public async Task SendMailToOnReceivingFeedback(string username)
+		public async Task SendMailToOnReceivingFeedback(string username)
         {
             var user = UserUtility.Instance.GetUserForProfile(0, username);
             MailMessage mail = new MailMessage();
@@ -69,8 +74,8 @@ namespace FreelancerCLone.Services
             smtpClient.Send(mail);
         }
 
-
-        public async Task SendMailToOnReviewingFeedback(int userId)
+		// Sends an email to the user after reviewing their feedback
+		public async Task SendMailToOnReviewingFeedback(int userId)
         {
             var user = UserUtility.Instance.GetUserForProfile(userId, "");
             MailMessage mail = new MailMessage();
@@ -86,8 +91,9 @@ namespace FreelancerCLone.Services
             mail.Body = content;
             smtpClient.Send(mail);
         }
+		// Sends an email to the user notifying them of the completion and rating of their project
 
-        public async Task SendMailRateProject(ProjectBid projectBid)
+		public async Task SendMailRateProject(ProjectBid projectBid)
         {
             var user = UserUtility.Instance.GetUserForProfile(projectBid.UserId, "");
             MailMessage mail = new MailMessage();
@@ -103,8 +109,9 @@ namespace FreelancerCLone.Services
             mail.Body = content;
             smtpClient.Send(mail);
         }
+		// Sends an email to the project owner on receiving a new bid for their project
 
-        public async Task SendMailOnReceiveBidInProject(ProjectBid projectBid)
+		public async Task SendMailOnReceiveBidInProject(ProjectBid projectBid)
         {
             var user = UserUtility.Instance.GetUserForProfile(projectBid.Project.AddedBy, "");
             MailMessage mail = new MailMessage();
@@ -120,8 +127,9 @@ namespace FreelancerCLone.Services
             mail.Body = content;
             smtpClient.Send(mail);
         }
+		// Sends an email to the freelancer on the approval of their bid for a project
 
-        public async Task SendMailOnApproveBidInProject(ProjectBid projectBid)
+		public async Task SendMailOnApproveBidInProject(ProjectBid projectBid)
         {
             var user = UserUtility.Instance.GetUserForProfile(projectBid.UserId, "");
             MailMessage mail = new MailMessage();
@@ -137,8 +145,9 @@ namespace FreelancerCLone.Services
             mail.Body = content;
             smtpClient.Send(mail);
         }
+		// Sends an email to the project owner on updating the completeness status of a project
 
-        public async Task SendMailOnProjectCompletenesssUpdate(ProjectBid projectBid)
+		public async Task SendMailOnProjectCompletenesssUpdate(ProjectBid projectBid)
         {
             var user = UserUtility.Instance.GetUserForProfile(projectBid.Project.AddedBy, "");
             MailMessage mail = new MailMessage();

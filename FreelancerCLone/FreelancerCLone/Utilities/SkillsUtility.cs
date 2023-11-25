@@ -3,36 +3,44 @@ using FreelancerCLone.ViewModels;
 
 namespace FreelancerCLone.Utilities
 {
-    public class SkillsUtility
-    {
-        private static SkillsUtility _instance;
+	// Utility class for managing skills and skill categories in the FreelancerClone application
+	public class SkillsUtility
+	{
+		private static SkillsUtility _instance;
 
-        public static SkillsUtility Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new SkillsUtility();
-                return _instance;
-            }
-        }
-        public List<Skill> GetSkillsOfCategory(int category)
-        {
-            List<Skill> skills;
+		// Singleton pattern: Ensures only one instance of the SkillsUtility is created
+		public static SkillsUtility Instance
+		{
+			get
+			{
+				if (_instance == null)
+					_instance = new SkillsUtility();
+				return _instance;
+			}
+		}
+
+		private SkillsUtility() { }
+
+		// Retrieves a list of skills belonging to a specific category
+		public List<Skill> GetSkillsOfCategory(int category)
+		{
+			List<Skill> skills;
             FreelancerDbContext db = new FreelancerDbContext();
             skills = db.Skills.Where(x => x.SkillCategoryId == category && x.IsActive == true).ToList();
             return skills;
         }
 
-        public List<SkillCategory> GetSkillCategories()
+		// Retrieves a list of all skill categories
+		public List<SkillCategory> GetSkillCategories()
         {
             List<SkillCategory> skillCategories;
             FreelancerDbContext db = new FreelancerDbContext();
             skillCategories = db.SkillCategories.Where(x => x.IsActive == true).ToList();
             return skillCategories;
         }
-
-        public SkillCategory GetCategoryById(int id)
+	
+        // Retrieves a skill category by its Id
+		public SkillCategory GetCategoryById(int id)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var skillCategory = db.SkillCategories.Find(id);
@@ -44,7 +52,8 @@ namespace FreelancerCLone.Utilities
 
             return skillCategory;
         }
-        public void AddSkillCategory(SkillCategory model)
+		// Adds a new skill category to the database
+		public void AddSkillCategory(SkillCategory model)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             SkillCategory skillCategory = new SkillCategory();
@@ -57,7 +66,8 @@ namespace FreelancerCLone.Utilities
             db.SaveChanges();
         }
 
-        public void EditSkillCategory(SkillCategory model)
+		// Edits an existing skill category in the database
+		public void EditSkillCategory(SkillCategory model)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var skillCategory = db.SkillCategories.Find(model.Id);
@@ -67,7 +77,8 @@ namespace FreelancerCLone.Utilities
             db.SaveChanges();
         }
 
-        public Skill GetSkillById(int skillId)
+		// Retrieves a skill by its ID
+		public Skill GetSkillById(int skillId)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var skill = db.Skills.Find(skillId);
@@ -77,8 +88,8 @@ namespace FreelancerCLone.Utilities
             }
             return skill;
         }
-
-        public void AddSkill(Skill model)
+		// Adds a new skill to the database
+		public void AddSkill(Skill model)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             Skill skill = new Skill();
@@ -91,8 +102,8 @@ namespace FreelancerCLone.Utilities
             db.Skills.Add(skill);
             db.SaveChanges();
         }
-
-        public void EditSkill(Skill model)
+		// Edits an existing skill in the database
+		public void EditSkill(Skill model)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var skill = db.Skills.Find(model.Id);
@@ -102,8 +113,8 @@ namespace FreelancerCLone.Utilities
 
             db.SaveChanges();
         }
-
-        public Skill DeleteSkillById(int Id)
+		// Deletes a skill by its ID
+		public Skill DeleteSkillById(int Id)
         {
             Skill skill;
             FreelancerDbContext db = new FreelancerDbContext();
@@ -115,8 +126,8 @@ namespace FreelancerCLone.Utilities
             db.SaveChanges();
             return skill;
         }
-
-        public void DeleteCategoryById(int Id)
+		// Deletes or restores a skill category by its ID
+		public void DeleteCategoryById(int Id)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var skillCategory = db.SkillCategories.Find(Id);
