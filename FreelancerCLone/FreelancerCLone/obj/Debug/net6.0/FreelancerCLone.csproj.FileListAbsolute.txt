@@ -816,5 +816,3 @@ C:\Users\Umair\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\Freel
 C:\Users\Umair\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\ref\FreelancerCLone.dll
 C:\Users\Umair\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout-Old.cshtml.rz.scp.css
 C:\Users\Umair\Desktop\FreeLancerClone.github.io\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutAccount.cshtml.rz.scp.css
-C:\Users\Bisma\OneDrive\Desktop\Desktop\SE\SE Lab\SELabProject\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout-Old.cshtml.rz.scp.css
-C:\Users\Bisma\OneDrive\Desktop\Desktop\SE\SE Lab\SELabProject\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutAccount.cshtml.rz.scp.css

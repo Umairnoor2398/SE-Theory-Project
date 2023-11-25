@@ -14,5 +14,7 @@
         public string? LongDescription { get; set; }
         public int Status { get; set; }
 
+        public IFormFile profileImage { get; set; }
+
     }
 }

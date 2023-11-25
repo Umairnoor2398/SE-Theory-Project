@@ -72,6 +72,44 @@ namespace FreelancerCLone.Utilities
             return userDb;
         }
 
+
+        public UserViewModel GetUserViewModl(string username)
+        {
+            User userDb;
+            FreelancerDbContext db = new FreelancerDbContext();
+            int userId = UserUtility.Instance.GetUserId(username);
+            userDb = db.Users.Find(userId);
+
+
+            UserViewModel user = new UserViewModel();
+
+            user.FirstName = userDb.FirstName;
+            user.LastName = userDb.LastName;
+            user.ShortDescription = userDb.ShortDescription;
+            user.LongDescription = userDb.LongDescription;
+            user.ProfileImagePath = userDb.ProfileImagePath;
+
+            return user;
+        }
+
+        public async Task UpdateProfileAsync(UserViewModel model, string username, IWebHostEnvironment _webHost)
+        {
+            var user = GetUserForProfile(0, username);
+            FreelancerDbContext db = new FreelancerDbContext();
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.ShortDescription = model.ShortDescription;
+            user.LongDescription = model.LongDescription;
+            List<FilePathEnum> path = new List<FilePathEnum>();
+
+            path.Add(FilePathEnum.UserImages);
+            user.ProfileImagePath = await UploadFileService.Instance.UploadFile(model.profileImage, path, _webHost);
+
+            db.Users.Update(user);
+            db.SaveChanges();
+
+        }
+
         public List<FreelancerPersonalProject> GetFreelancerPersonalProjects(int user, string username)
         {
             List<FreelancerPersonalProject> freelancerProjects;

@@ -1,0 +1,83 @@
+﻿@model FreelancerCLone.ViewModels.UserViewModel
+
+@{
+    Layout = null;
+}
+
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="profileModalLabel">Edit your profile</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="EditprofilePost" enctype="multipart/form-data">
+                    <input asp-for="Id" value="@ViewBag.Id" hidden />
+
+                    <div class="row">
+
+                        <div class="col-md-6 p-3">
+                            <div class="form-floating">
+                                <input asp-for="FirstName" class="form-control" />
+                                <label asp-for="FirstName" class="control-label">First Name</label>
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-3">
+                            <div class="form-floating">
+                                <input asp-for="LastName" class="form-control" />
+                                <label asp-for="LastName" class="control-label">Last Name</label>
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 p-3">
+                            <div class="form-floating">
+                                <input asp-for="ShortDescription" class="form-control" />
+                                <label asp-for="ShortDescription" class="control-label">Short Description</label>
+                                <span asp-validation-for="ShortDescription" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p-3 text-center">
+
+                            <input asp-for="profileImage" type="file" id="profileImage" accept="image/*" onchange="previewImage()" />
+                            <label id="file-label" asp-for="profileImage">Upload Profile Pic</label>
+
+                            @* <div class="custom__image-container">
+                            <label id="add-img-label" for="add-single-img">+</label>
+                            <input type="file" id="add-single-img" accept="image/jpeg" style="opacity: 0; height: 0;" />
+                            </div>
+                            <div class="form-floating">
+                            <input asp-for="profileImage" type="file" class="form-control" />
+                            <label asp-for="profileImage" class="control-label"></label>
+                            <span asp-validation-for="profileImage" class="text-danger"></span>
+                            </div> *@
+                        </div>
+                        <div class="col-md-6 p-3  text-center">
+                            <img id="profile-img" src="~/DefaultUser.png" />
+                        </div>
+
+                        <div class="col-md-12 p-3">
+                            <div class="form-floating">
+                                <textarea asp-for="LongDescription" class="form-control" style="height: 178px;"></textarea>
+                                <label asp-for="LongDescription" class="control-label">Long Description</label>
+                                <span asp-validation-for="LongDescription" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
