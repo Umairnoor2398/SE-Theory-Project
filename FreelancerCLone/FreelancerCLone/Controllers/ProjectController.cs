@@ -15,12 +15,24 @@ namespace FreelancerCLone.Controllers
         {
             _webHostEnvironment = webHostEnvironment;
         }
-        public IActionResult Index()
+        public IActionResult Index(string query)
         {
             List<ProjectViewModel> projects = new List<ProjectViewModel>();
             try
             {
+
                 projects = ProjectUtility.Instance.GetProjects(User.Identity.Name);
+
+                //projects = projects.Where(x => x.Title.Contains(query) || x.Description.Contains(query) || x.TechnologyRequired.Contains(query)).ToList();
+                if (!string.IsNullOrWhiteSpace(query))
+                {
+                    string[] queryWords = query.Split(' ');
+                    projects = projects.Where(item =>
+                               queryWords.All(word => item.Title.Contains(word, StringComparison.OrdinalIgnoreCase) ||
+                               item.TechnologyRequired.Contains(word, StringComparison.OrdinalIgnoreCase) ||
+                               item.Description.Contains(word, StringComparison.OrdinalIgnoreCase))).ToList();
+                }
+
             }
             catch (Exception ex)
             {
