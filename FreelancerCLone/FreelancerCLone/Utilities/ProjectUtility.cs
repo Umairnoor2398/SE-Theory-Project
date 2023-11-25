@@ -2,6 +2,7 @@
 using FreelancerCLone.DbModels;
 using FreelancerCLone.Services;
 using FreelancerCLone.ViewModels;
+//using Microsoft.CodeAnalysis;
 
 namespace FreelancerCLone.Utilities
 {
@@ -194,7 +195,7 @@ namespace FreelancerCLone.Utilities
             }
         }
 
-        public void RateUserProjectBid(ProjectBid model)
+        public ProjectBid RateUserProjectBid(ProjectBid model)
         {
             FreelancerDbContext db = new FreelancerDbContext();
 
@@ -204,6 +205,8 @@ namespace FreelancerCLone.Utilities
             bid.UpdatedOn = DateTime.Now;
             db.ProjectBids.Update(bid);
             db.SaveChanges();
+
+            return bid;
         }
 
         public Project GetProject(int Id)
@@ -214,7 +217,7 @@ namespace FreelancerCLone.Utilities
             return project;
         }
 
-        public void AddProjectBid(ProjectBid model, string username)
+        public ProjectBid AddProjectBid(ProjectBid model, string username)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             model.IsActive = true;
@@ -227,9 +230,10 @@ namespace FreelancerCLone.Utilities
             model.UserId = UserUtility.Instance.GetUserId(username);
             db.ProjectBids.Add(model);
             db.SaveChanges();
+            return model;
         }
 
-        public void ApproveUserProjectBid(int BidId)
+        public ProjectBid ApproveUserProjectBid(int BidId)
         {
             FreelancerDbContext db = new FreelancerDbContext();
 
@@ -237,6 +241,8 @@ namespace FreelancerCLone.Utilities
             bid.Status = LookupUtility.Instance.getId("Accepted");
             db.ProjectBids.Update(bid);
             db.SaveChanges();
+
+            return bid;
         }
         public void DeleteUserProjectBid(int Id)
         {
@@ -247,13 +253,15 @@ namespace FreelancerCLone.Utilities
             db.SaveChanges();
         }
 
-        public void UpdateProjectCompleteStatus(int Id)
+        public ProjectBid UpdateProjectCompleteStatus(int Id)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             var bid = db.ProjectBids.Find(Id);
             bid.IsCompleted = !bid.IsCompleted;
             db.ProjectBids.Update(bid);
             db.SaveChanges();
+
+            return bid;
         }
 
         public ProjectViewModel GetProjectViewModel(int Id)

@@ -98,16 +98,24 @@
                     <th>Name</th>
                     <th>Bid Amount</th>
                     <th>Days Required</th>
+                    <th>User profile</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var b in Model.ProjectBids)
                 {
+                    @if (b.IsActive == false)
+                    {
+                        continue;
+                    }
                     <tr>
                         <td>@b.User.FirstName @b.User.LastName</td>
                         <td>@b.BidBudget</td>
                         <td>@b.BidDeadline</td>
+                        <td>
+                            <a asp-controller="User" asp-action="Profile" asp-route-user="@b.UserId">Visit</a>
+                        </td>
                         <td>
                             <a class="btn btn-success" asp-action="ApproveBid" asp-route-BidId="@b.Id" asp-route-ProjectId="@Model.Id">Approve</a>
                         </td>

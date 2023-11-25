@@ -44,13 +44,15 @@ namespace FreelancerCLone.Utilities
             Feedback model = db.Feedbacks.Where(x => x.Id == Id).FirstOrDefault();
             return model;
         }
-        public void UpdateFeedbackStatusToAccept(Feedback model)
+        public Feedback UpdateFeedbackStatusToAccept(Feedback model)
         {
             FreelancerDbContext db = new FreelancerDbContext();
             Feedback feedback = db.Feedbacks.Where(x => x.Id == model.Id).FirstOrDefault();
             feedback.Status = db.Lookups.Where(x => x.Value == "Accepted").FirstOrDefault().Id;
             db.Feedbacks.Update(feedback);
             db.SaveChanges();
+
+            return feedback;
         }
 
     }

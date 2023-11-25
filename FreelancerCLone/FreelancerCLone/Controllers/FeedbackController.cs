@@ -25,11 +25,12 @@ namespace FreelancerCLone.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(Feedback model)
+        public async Task<IActionResult> Create(Feedback model)
         {
             try
             {
                 FeedbackUtility.Instance.CreateFeedback(model, User.Identity.Name);
+                await MailSenderService.Instance.SendMailToOnReceivingFeedback(User.Identity.Name);
             }
             catch (Exception ex)
             {
@@ -56,11 +57,12 @@ namespace FreelancerCLone.Controllers
 
 
 
-        public IActionResult UpdateStatus(Feedback model)
+        public async Task<IActionResult> UpdateStatus(Feedback model)
         {
             try
             {
-                FeedbackUtility.Instance.UpdateFeedbackStatusToAccept(model);
+                var feedback = FeedbackUtility.Instance.UpdateFeedbackStatusToAccept(model);
+                await MailSenderService.Instance.SendMailToOnReviewingFeedback(feedback.AddedBy);
             }
             catch (Exception ex)
             {

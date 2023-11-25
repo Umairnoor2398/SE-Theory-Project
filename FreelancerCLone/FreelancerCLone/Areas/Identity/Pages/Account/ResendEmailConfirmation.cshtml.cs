@@ -7,6 +7,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using FreelancerCLone.Services;
+using FreelancerCLone.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -76,10 +78,10 @@ namespace FreelancerCLone.Areas.Identity.Pages.Account
                 pageHandler: null,
                 values: new { userId = userId, code = code },
                 protocol: Request.Scheme);
-            await _emailSender.SendEmailAsync(
-                Input.Email,
-                "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+            var u = UserUtility.Instance.GetUserForProfile(0, Input.Email);
+
+            await MailSenderService.Instance.SendMailToUserOnRegister(Input.Email, u.FirstName, HtmlEncoder.Default.Encode(callbackUrl));
 
             ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
             return Page();

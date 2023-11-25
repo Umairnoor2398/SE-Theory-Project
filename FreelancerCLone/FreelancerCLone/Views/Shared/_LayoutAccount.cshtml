@@ -164,22 +164,20 @@
         </div>
     </header><!-- End Header -->
     <!-- End Header -->
-    @if (ViewBag.MainRemoved == false)
-    {
-        @RenderBody()
-    }
-    else
-    {
-        <main id="main" class="m-5" style="margin-top: 100px !important;">
 
-            @RenderBody()
+    <main id="main" class="m-5" style="margin-top: 100px !important;">
 
-        </main>
+        <div class="row w-100 mx-0">
+            <div class="col-lg-4 mx-auto">
+                <div class="card auth-form-light text-left py-5 px-4 px-sm-5 shadow-bx">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
 
-        <!-- End #main -->
-    }
+    </main>
 
-
+    <!-- End #main -->
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer sticky-footer">
 

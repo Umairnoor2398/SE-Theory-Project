@@ -23,7 +23,6 @@ namespace FreelancerCLone.Controllers
 
                 projects = ProjectUtility.Instance.GetProjects(User.Identity.Name);
 
-                //projects = projects.Where(x => x.Title.Contains(query) || x.Description.Contains(query) || x.TechnologyRequired.Contains(query)).ToList();
                 if (!string.IsNullOrWhiteSpace(query))
                 {
                     string[] queryWords = query.Split(' ');
@@ -79,11 +78,12 @@ namespace FreelancerCLone.Controllers
         }
 
         [HttpPost]
-        public IActionResult BidRatePost(ProjectBid model)
+        public async Task<IActionResult> BidRatePostAsync(ProjectBid model)
         {
             try
             {
-                ProjectUtility.Instance.RateUserProjectBid(model);
+                var bid = ProjectUtility.Instance.RateUserProjectBid(model);
+                await MailSenderService.Instance.SendMailRateProject(bid);
             }
             catch (Exception ex)
             {
@@ -119,11 +119,12 @@ namespace FreelancerCLone.Controllers
         }
 
         [HttpPost]
-        public IActionResult BidProjectPost(ProjectBid model)
+        public async Task<IActionResult> BidProjectPostAsync(ProjectBid model)
         {
             try
             {
-                ProjectUtility.Instance.AddProjectBid(model, User.Identity.Name);
+                model = ProjectUtility.Instance.AddProjectBid(model, User.Identity.Name);
+                await MailSenderService.Instance.SendMailOnReceiveBidInProject(model);
             }
             catch (Exception ex)
             {
@@ -135,11 +136,12 @@ namespace FreelancerCLone.Controllers
 
 
 
-        public IActionResult ApproveBid(int BidId, int ProjectId)
+        public async Task<IActionResult> ApproveBidAsync(int BidId, int ProjectId)
         {
             try
             {
-                ProjectUtility.Instance.ApproveUserProjectBid(BidId);
+                var bid = ProjectUtility.Instance.ApproveUserProjectBid(BidId);
+                await MailSenderService.Instance.SendMailOnApproveBidInProject(bid);
             }
             catch (Exception ex)
             {
@@ -164,11 +166,14 @@ namespace FreelancerCLone.Controllers
 
 
 
-        public IActionResult ChangeProjectCompleteness(int Id)
+        public async Task<IActionResult> ChangeProjectCompletenessAsync(int Id)
         {
             try
             {
-                ProjectUtility.Instance.UpdateProjectCompleteStatus(Id);
+                var bid = ProjectUtility.Instance.UpdateProjectCompleteStatus(Id);
+                await MailSenderService.Instance.SendMailOnProjectCompletenesssUpdate(bid);
+
+
             }
             catch (Exception ex)
             {
