@@ -16,6 +16,8 @@ namespace FreelancerCLone.Controllers
                 ViewBag.CategoryId = category;
                 try
                 {
+                    var c = SkillsUtility.Instance.GetCategoryById(category);
+                    ViewBag.CategoryName = c.CategoryName;
                     skills = SkillsUtility.Instance.GetSkillsOfCategory(category);
                 }
                 catch (Exception ex)

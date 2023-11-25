@@ -27,6 +27,14 @@ namespace FreelancerCLone.Utilities
             return _user.Users.FirstOrDefault().Id;
         }
 
+        public string getUserProfilePictureUrl(string username)
+        {
+            int userId = GetUserId(username);
+            FreelancerDbContext db = new FreelancerDbContext();
+            return db.Users.Find(userId).ProfileImagePath;
+
+        }
+
         public void AddUser(UserViewModel user)
         {
             FreelancerDbContext db = new FreelancerDbContext();
@@ -75,7 +83,7 @@ namespace FreelancerCLone.Utilities
             {
                 userId = UserUtility.Instance.GetUserId(username);
             }
-            freelancerProjects = db.FreelancerPersonalProjects.Where(x => x.UserId == userId).ToList();
+            freelancerProjects = db.FreelancerPersonalProjects.Where(x => x.UserId == userId && x.IsActive == true).ToList();
             return freelancerProjects;
         }
 
@@ -180,7 +188,7 @@ namespace FreelancerCLone.Utilities
                 user = UserUtility.Instance.GetUserId(username);
             }
 
-            userSkills = db.UserSkills.Where(x => x.UserId == user).ToList();
+            userSkills = db.UserSkills.Where(x => x.UserId == user && x.IsActive == true).ToList();
             return userSkills;
         }
 
@@ -198,6 +206,16 @@ namespace FreelancerCLone.Utilities
             var skill = db.UserSkills.Find(Id);
             skill.IsActive = false;
             db.UserSkills.Update(skill);
+            db.SaveChanges();
+        }
+
+        public void DeleteUserPersonalProjects(int Id)
+        {
+            FreelancerDbContext db = new FreelancerDbContext();
+
+            var project = db.FreelancerPersonalProjects.Find(Id);
+            project.IsActive = false;
+            db.FreelancerPersonalProjects.Update(project);
             db.SaveChanges();
         }
 

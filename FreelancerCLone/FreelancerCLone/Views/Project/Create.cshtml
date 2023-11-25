@@ -62,10 +62,95 @@
         max-width: 100% !important;
     }
 </style>
+
+
+<style>
+    .upload__box {
+        padding: 40px;
+    }
+
+    .upload__inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .upload__btn {
+        display: inline-block;
+        font-weight: 600;
+        color: #fff;
+        text-align: center;
+        min-width: 116px;
+        padding: 5px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid;
+        background-color: #4045ba;
+        border-color: #4045ba;
+        border-radius: 10px;
+        line-height: 26px;
+        font-size: 14px;
+    }
+
+        .upload__btn:hover {
+            background-color: unset;
+            color: #4045ba;
+            transition: all 0.3s ease;
+        }
+
+    .upload__btn-box {
+        margin-bottom: 10px;
+    }
+
+    .upload__img-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+
+    .upload__img-box {
+        width: 200px;
+        padding: 0 10px;
+        margin-bottom: 12px;
+    }
+
+    .upload__img-close {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: center;
+        line-height: 24px;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+        .upload__img-close:after {
+            content: "✖";
+            font-size: 14px;
+            color: white;
+        }
+
+    .img-bg {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        padding-bottom: 100%;
+    }
+</style>
+
+
+
 <div class="my-5">
     <h3 class="d-flex justify-content-between align-items-center">
         @ViewData["Title"]
-
     </h3>
     <hr>
 </div>
@@ -79,7 +164,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input asp-for="Id" value="@ViewBag.Id" hidden />
             <div class="row">
-                <div class="col-12">
+                <div class="p-3 col-12">
                     <div class="form-floating">
                         <label asp-for="Title" class="control-label"></label>
                         <input asp-for="Title" class="form-control" />
@@ -90,7 +175,7 @@
 
 
             <div class="row">
-                <div class=" col-12 ">
+                <div class=" p-3 col-12 ">
                     <div class="form-floating form-group">
                         <textarea id="tiny" asp-for="Description" class="form-control"></textarea>
                         <label asp-for="Description" class="control-label"></label>
@@ -101,14 +186,14 @@
 
 
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="p-3 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="form-floating">
                         <input asp-for="Budget" class="form-control" />
                         <label asp-for="Budget" class="control-label"></label>
                         <span asp-validation-for="Budget" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="p-3 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="form-floating">
                         <input asp-for="Deadline" class="form-control" />
                         <label asp-for="Deadline" class="control-label"></label>
@@ -119,18 +204,22 @@
 
 
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="p-3 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="form-floating">
                         <input asp-for="TechnologyRequired" class="form-control" />
                         <label asp-for="TechnologyRequired" class="control-label"></label>
                         <span asp-validation-for="TechnologyRequired" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="form-floating">
-                        <input asp-for="docs" class="form-control btn-primary btn" />
-                        <label asp-for="docs" class="control-label"></label>
-                        <span asp-validation-for="docs" class="text-danger"></span>
+                <div class="p-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="upload__box">
+                        <div class="upload__btn-box">
+                            <label class="upload__btn">
+                                <p>Upload images</p>
+                                <input asp-for="docs" type="file" multiple="" data-max_length="20" class="upload__inputfile">
+                            </label>
+                        </div>
+                        <div class="upload__img-wrap"></div>
                     </div>
                 </div>
             </div>

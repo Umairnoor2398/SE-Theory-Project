@@ -93,10 +93,12 @@ namespace FreelancerCLone.Utilities
             }
         }
 
-        public List<ProjectViewModel> GetProjects()
+        public List<ProjectViewModel> GetProjects(string username)
         {
+            int userId = UserUtility.Instance.GetUserId(username);
+            int acceptedId = LookupUtility.Instance.getId("Accepted");
             FreelancerDbContext db = new FreelancerDbContext();
-            var projects = db.Projects.ToList();
+            var projects = db.Projects.Where(x => x.IsActive == true && x.AddedBy != userId && x.IsAssigned == false).ToList();
             List<ProjectViewModel> pro = new List<ProjectViewModel>();
             foreach (var p in projects)
             {
@@ -124,7 +126,7 @@ namespace FreelancerCLone.Utilities
         public List<ProjectViewModel> GetUserAddedProjects(int UserId)
         {
             FreelancerDbContext db = new FreelancerDbContext();
-            var userProjects = db.Projects.Where(x => x.AddedBy == UserId).ToList();
+            var userProjects = db.Projects.Where(x => x.AddedBy == UserId && x.IsActive == true).ToList();
 
             List<ProjectViewModel> pro = new List<ProjectViewModel>();
             foreach (var p in userProjects)
@@ -145,7 +147,7 @@ namespace FreelancerCLone.Utilities
 
         }
 
-        public void UpdateProject(ProjectViewModel updatedProject)
+        public async Task UpdateProject(ProjectViewModel updatedProject, IWebHostEnvironment _webHostEnvironment)
         {
             using (FreelancerDbContext db = new FreelancerDbContext())
             {
@@ -157,13 +159,37 @@ namespace FreelancerCLone.Utilities
                     // Update the properties of the existing project with new values
                     existingProject.Deadline = updatedProject.Deadline;
                     existingProject.Description = updatedProject.Description;
-                    existingProject.IsActive = updatedProject.IsActive;
-                    existingProject.Status = updatedProject.Status;
                     existingProject.TechnologyRequired = updatedProject.TechnologyRequired;
                     existingProject.Title = updatedProject.Title;
                     existingProject.Budget = updatedProject.Budget;
+                    existingProject.UpdatedOn = DateTime.Now;
+
+                    db.Projects.Update(existingProject);
 
                     db.SaveChanges();
+
+
+                    List<FilePathEnum> path = new List<FilePathEnum>();
+
+                    path.Add(FilePathEnum.ProjectDocuments);
+
+                    if (updatedProject.docs != null)
+                    {
+                        foreach (var i in updatedProject.docs)
+                        {
+
+                            ProjectDocument doc = new ProjectDocument();
+                            doc.ProjectId = existingProject.Id;
+                            doc.DocumentPath = await UploadFileService.Instance.UploadFile(i, path, _webHostEnvironment);
+                            doc.DocumentType = CategorizeFile(i.FileName);
+                            doc.AddedOn = DateTime.Now;
+                            doc.IsActive = true;
+
+
+                            db.ProjectDocuments.Add(doc);
+                            db.SaveChanges();
+                        }
+                    }
                 }
             }
         }

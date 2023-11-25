@@ -1,33 +1,52 @@
 ﻿@model FreelancerCLone.DbModels.Feedback
+@using FreelancerCLone.Utilities
 
 @{
     ViewData["Title"] = "Feedback";
+
+    var user = UserUtility.Instance.GetUserForProfile(0, User.Identity.Name);
 }
 
-<h1>Feedback</h1>
+<!-- ======= Feedback Section ======= -->
+<section id="contact" class="contact" style="margin-top: -50px;">
+    <div class="container" data-aos="fade-up">
 
+        <div class="section-header">
+            <h2>Feedback</h2>
+            <p>Your opinion is valuable for us.</p>
+        </div>
 
-<div class="row text-center">
-    <div class="col-md-6">
-        <form asp-action="Create" asp-controller="Feedback">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Message" class="control-label"></label>
-                <input asp-for="Message" class="form-control" />
-                <span asp-validation-for="Message" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        <div class="row gx-lg-0 gy-4">
+
+            <div class="col-lg-8">
+                <form asp-action="Create" asp-controller="Feedback" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" value="@user.FirstName @user.LastName" disabled>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" class="form-control" placeholder="Your Email" value="@user.UserNavigation.Email" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" asp-for="Message" rows="7" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+            </div><!-- End Feedback Form -->
+
+        </div>
+
     </div>
-</div>
-
-
+</section><!-- End Feedback Section -->
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

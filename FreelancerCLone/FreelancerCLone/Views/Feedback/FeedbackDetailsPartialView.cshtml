@@ -15,6 +15,8 @@
                 <form asp-action="UpdateStatus" enctype="multipart/form-data">
                     <input asp-for="Id" value="@ViewBag.Id" hidden />
 
+                    <span>Category: @Model.Category.Value</span>
+
                     <p>@Model.Message</p>
 
 

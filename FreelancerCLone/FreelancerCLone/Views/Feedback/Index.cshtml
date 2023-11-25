@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<FreelancerCLone.DbModels.Feedback>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Feedbacks";
 }
 
-<h1>Index</h1>
+<h1>Feedbacks</h1>
 
 <div id="addDiv"></div>
-<table class="table">
+<table class="table data-table">
     <thead>
         <tr>
             <th>
@@ -33,7 +33,7 @@
                     @item.Category.Value
                 </td>
                 <td>
-                    @item.AddedOn
+                    @item.AddedOn.ToShortDateString()
                 </td>
                 <td>
                     <a data-toggle="modal" class="btn btn-secondary" data-target="#FeedbackDetailsModal" onclick="addFeedbackDetailsModal(@item.Id)">Details</a>

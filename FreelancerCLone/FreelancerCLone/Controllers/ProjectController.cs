@@ -20,7 +20,7 @@ namespace FreelancerCLone.Controllers
             List<ProjectViewModel> projects = new List<ProjectViewModel>();
             try
             {
-                projects = ProjectUtility.Instance.GetProjects();
+                projects = ProjectUtility.Instance.GetProjects(User.Identity.Name);
             }
             catch (Exception ex)
             {
@@ -200,7 +200,7 @@ namespace FreelancerCLone.Controllers
                 }
                 else
                 {
-                    // Implement the Edit Functionailty
+                    await ProjectUtility.Instance.UpdateProject(project, _webHostEnvironment);
                 }
             }
             catch (Exception ex)

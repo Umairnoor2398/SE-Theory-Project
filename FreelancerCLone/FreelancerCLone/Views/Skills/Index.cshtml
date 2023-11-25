@@ -1,57 +1,53 @@
 ﻿@model IEnumerable<FreelancerCLone.DbModels.Skill>
 
 @{
-	ViewData["Title"] = "Index";
+    ViewData["Title"] = "Skills";
 }
 
-<h1>Index</h1>
+<h1>Skills of @ViewBag.CategoryName</h1>
 
 <p>
-	<a data-toggle="modal" class="btn btn-primary" data-target="#skillModal" onclick="addskillModal(@ViewBag.CategoryId)">Create New</a>
+    <a data-toggle="modal" class="btn btn-primary" data-target="#skillModal" onclick="addskillModal(@ViewBag.CategoryId)">Create New</a>
 </p>
 <div id="addDiv"></div>
-<table class="table">
-	<thead>
-		<tr>
-			<th>
-				@Html.DisplayNameFor(model => model.SkillName)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.IsActive)
-			</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model)
-		{
-			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.SkillName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.IsActive)
-				</td>
-				<td>
-					<a data-toggle="modal" class="btn btn-secondary" data-target="#skillModal" onclick="addskillModal('@(ViewBag.CategoryId+" "+ @item.Id)')">Edit</a>
-					<a asp-action="DeleteSkill" asp-route-id="@item.Id">Delete</a>
-				</td>
-			</tr>
-		}
-	</tbody>
-</table>
+<div class="table-responsive">
+    <table class="table data-table">
+        <thead>
+            <tr>
+                <th>
+                    Skill
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SkillName)
+                    </td>
+                    <td>
+                        <a data-toggle="modal" class="btn btn-secondary" data-target="#skillModal" onclick="addskillModal('@(ViewBag.CategoryId+" "+ @item.Id)')">Edit</a>
+                        <a class="btn btn-danger" asp-action="DeleteSkill" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-	function addskillModal(id) {
-		$.ajax({
-			type: "Get",
-			url: "/Skills/CreateSkill",
-			data: { Id: id },
-			success: function (result) {
-				$("#addDiv").html(result);
-				$("#skillModal").modal('show');
-			}
-		})
-	}
+    function addskillModal(id) {
+        $.ajax({
+            type: "Get",
+            url: "/Skills/CreateSkill",
+            data: { Id: id },
+            success: function (result) {
+                $("#addDiv").html(result);
+                $("#skillModal").modal('show');
+            }
+        })
+    }
 </script>

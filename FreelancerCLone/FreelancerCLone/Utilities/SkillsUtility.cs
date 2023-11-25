@@ -20,7 +20,7 @@ namespace FreelancerCLone.Utilities
         {
             List<Skill> skills;
             FreelancerDbContext db = new FreelancerDbContext();
-            skills = db.Skills.Where(x => x.SkillCategoryId == category).ToList();
+            skills = db.Skills.Where(x => x.SkillCategoryId == category && x.IsActive == true).ToList();
             return skills;
         }
 
@@ -28,7 +28,7 @@ namespace FreelancerCLone.Utilities
         {
             List<SkillCategory> skillCategories;
             FreelancerDbContext db = new FreelancerDbContext();
-            skillCategories = db.SkillCategories.ToList();
+            skillCategories = db.SkillCategories.Where(x => x.IsActive == true).ToList();
             return skillCategories;
         }
 

@@ -1,50 +1,51 @@
 ﻿@model IEnumerable<FreelancerCLone.DbModels.UserSkill>
 
 @{
-	ViewData["Title"] = "Skills";
+    ViewData["Title"] = "Skills";
 }
 
 <h1>Skills</h1>
 
 <p>
-	<a data-toggle="modal" class="btn btn-primary" data-target="#skillModal" onclick="addSkillsCategory()">Create New</a>
+    <a data-toggle="modal" class="btn btn-primary" data-target="#skillModal" onclick="addSkillsCategory()">Create New</a>
 </p>
 <div id="addDiv"></div>
-<table class="table">
-	<thead>
-		<tr>
-			<th>
-				@Html.DisplayNameFor(model => model.Skill)
-			</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model)
-		{
-			<tr>
-
-				<td>
-					@Html.DisplayFor(modelItem => item.Skill.Id)
-				</td>
-				<td>
-					<a asp-action="DeleteUserSkills" asp-route-id="@item.Id">Delete</a>
-				</td>
-			</tr>
-		}
-	</tbody>
-</table>
+<div class="table-responsive">
+    <table class="table data-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Skill)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Skill.Id)
+                    </td>
+                    <td>
+                        <a asp-action="DeleteUserSkills" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-	function addSkillsCategory() {
-		$.ajax({
-			type: "Get",
-			url: "/User/AddUserSkills",
-			success: function (result) {
-				$("#addDiv").html(result);
-				$("#skillModal").modal('show');
-			}
-		})
-	}
+    function addSkillsCategory() {
+        $.ajax({
+            type: "Get",
+            url: "/User/AddUserSkills",
+            success: function (result) {
+                $("#addDiv").html(result);
+                $("#skillModal").modal('show');
+            }
+        })
+    }
 </script>

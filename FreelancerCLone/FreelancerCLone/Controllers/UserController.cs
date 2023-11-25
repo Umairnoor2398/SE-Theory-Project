@@ -45,7 +45,7 @@ namespace FreelancerCLone.Controllers
             List<FreelancerPersonalProject> freelancerProjects = new List<FreelancerPersonalProject>();
             try
             {
-                freelancerProjects = UserUtility.Instance.GetFreelancerPersonalProjects(user,User.Identity.Name);
+                freelancerProjects = UserUtility.Instance.GetFreelancerPersonalProjects(user, User.Identity.Name);
             }
             catch (Exception ex)
             {
@@ -166,6 +166,24 @@ namespace FreelancerCLone.Controllers
             return RedirectToAction("Skills");
         }
 
+        public IActionResult DeleteUserpersonalProjects(int Id)
+        {
+            try
+            {
+                UserUtility.Instance.DeleteUserSkill(Id);
+            }
+            catch (Exception ex)
+            {
+                ErrorLogger.Instance.ErrorLoggingFunction(ex.Message, this.ToString());
+            }
+            return RedirectToAction("Skills");
+        }
+
+        public IActionResult ProjectDetails(int Id)
+        {
+
+            return View();
+        }
 
     }
 }

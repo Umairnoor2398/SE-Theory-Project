@@ -1,87 +1,95 @@
 ﻿@model IEnumerable<FreelancerCLone.ViewModels.ProjectViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Mu Projects";
 }
 
-<h1>Index</h1>
+<h1>My Created Projects</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
 </p>
 
 <div id="addDiv"></div>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddedOn)
-            </th>
-            <th>
-                Status
-            </th>
 
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-responsive">
+    <table class="table data-table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AddedOn)
-                </td>
-                <td>
-                    @if (item.ProjectBids.Any(x => x.StatusNavigation.Value == "Accepted"))
-                    {
-                        var bid = item.ProjectBids.FirstOrDefault(x => x.StatusNavigation.Value == "Accepted");
-                        @if (bid.IsReviewed == true)
-                        {
-                            <p>@bid.Rating Starts Rated</p>
-                        }
-                        else if (bid.IsCompleted == true)
-                        {
-                            <p>Project Completed By @bid.User.FirstName @bid.User.LastName</p>
-                        }
-                        else
-                        {
-                            <p>Assigned to @bid.User.FirstName @bid.User.LastName</p>
-                        }
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AddedOn)
+                </th>
+                <th>
+                    Status
+                </th>
 
-                    }
-                </td>
-                <td>
-                    @if (item.ProjectBids.Any(x => x.StatusNavigation.Value == "Accepted"))
-                    {
-                        var bid = item.ProjectBids.FirstOrDefault(x => x.StatusNavigation.Value == "Accepted");
-                        @if (bid.IsReviewed == true)
-                        {
-
-                        }
-                        else if (bid.IsCompleted == true)
-                        {
-                            <a data-toggle="modal" class="btn btn-success" data-target="#skillModal" onclick="BidRateModal(@item.Id)">Edit</a>
-                        }
-                        else
-                        {
-
-                        }
-                    }
-
-                    <a asp-action="Create" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddedOn)
+                    </td>
+                    <td>
+                        @if (item.ProjectBids.Any(x => x.StatusNavigation.Value == "Accepted"))
+                        {
+                            var bid = item.ProjectBids.FirstOrDefault(x => x.StatusNavigation.Value == "Accepted");
+                            @if (bid.IsReviewed == true)
+                            {
+                                <p>@bid.Rating Starts Rated</p>
+                            }
+                            else if (bid.IsCompleted == true)
+                            {
+                                <p>Project Completed By @bid.User.FirstName @bid.User.LastName</p>
+                            }
+                            else
+                            {
+                                <p>Assigned to @bid.User.FirstName @bid.User.LastName</p>
+                            }
+
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        @if (item.ProjectBids.Any(x => x.StatusNavigation.Value == "Accepted"))
+                        {
+                            var bid = item.ProjectBids.FirstOrDefault(x => x.StatusNavigation.Value == "Accepted");
+                            @if (bid.IsReviewed == true)
+                            {
+
+                            }
+                            else if (bid.IsCompleted == true)
+                            {
+                                <a data-toggle="modal" class="btn btn-success" data-target="#skillModal" onclick="BidRateModal(@item.Id)">Give Reviews</a>
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else
+                        {
+                            <a class="btn btn-secondary" asp-action="Create" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        }
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
