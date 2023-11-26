@@ -37,7 +37,7 @@
                         @Html.DisplayFor(modelItem => item.Title)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.AddedOn)
+                        @item.AddedOn.Date.ToShortDateString()
                     </td>
                     <td>
                         @if (item.ProjectBids.Any(x => x.StatusNavigation.Value == "Accepted"))
@@ -45,7 +45,7 @@
                             var bid = item.ProjectBids.FirstOrDefault(x => x.StatusNavigation.Value == "Accepted");
                             @if (bid.IsReviewed == true)
                             {
-                                <p>@bid.Rating Starts Rated</p>
+                                <p>@bid.Rating Stars Rated</p>
                             }
                             else if (bid.IsCompleted == true)
                             {

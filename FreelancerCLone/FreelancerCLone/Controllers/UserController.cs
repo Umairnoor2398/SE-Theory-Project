@@ -4,6 +4,8 @@ using FreelancerCLone.Utilities;
 using FreelancerCLone.DbModels;
 using FreelancerCLone.Services;
 using FreelancerCLone.Constants;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FreelancerCLone.Controllers
 {
@@ -16,13 +18,7 @@ namespace FreelancerCLone.Controllers
         {
             _webHost = webHost;
         }
-
-        // Displays the default view for the user
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        [Authorize]
         // Displays the user profile with the option to view/edit
         public IActionResult Profile(int user = 0)
         {
@@ -47,7 +43,7 @@ namespace FreelancerCLone.Controllers
 
             return View(userDb);
         }
-
+        [Authorize]
         // Displays the partial view for editing the user profile
         public IActionResult Editprofile()
         {
@@ -65,7 +61,7 @@ namespace FreelancerCLone.Controllers
 
             return PartialView("ProfileEditPartialView", userDb);
         }
-
+        [Authorize]
         // Handles the post request to update the user profile
         public async Task<IActionResult> EditprofilePost(UserViewModel user)
         {
@@ -73,7 +69,7 @@ namespace FreelancerCLone.Controllers
 
             return RedirectToAction("Profile");
         }
-
+        [Authorize]
         // Displays the user's projects
         public IActionResult Projects(int user = 0)
         {
@@ -91,7 +87,7 @@ namespace FreelancerCLone.Controllers
 
             return View(freelancerProjects);
         }
-
+        [Authorize]
         // Displays the partial view for creating or editing a personal project
         public IActionResult CreateEditProject(int id = 0)
         {
@@ -113,7 +109,7 @@ namespace FreelancerCLone.Controllers
             }
             return View();
         }
-
+        [Authorize]
         // Handles the post request for creating or editing a personal project
         [HttpPost]
         public async Task<IActionResult> CreateEditProject(FreelancerPersonalProjectViewModel model)
@@ -139,7 +135,7 @@ namespace FreelancerCLone.Controllers
 
             return RedirectToAction("Projects");
         }
-
+        [Authorize]
         // Displays the user's skills
         public IActionResult Skills(int user = 0)
         {
@@ -158,14 +154,17 @@ namespace FreelancerCLone.Controllers
 
             return View(userSkills);
         }
-
+        [Authorize]
         // Displays the partial view for adding user skills
         public IActionResult AddUserSkills()
         {
             try
             {
+                // Retrieves and displays a list of skill categories for selection
+                List<SelectListItem> categories = DropdownUtility.Instance.getSkillCategories();
+                ViewBag.skillCategories = categories;
                 // Retrieves and displays a list of skills for selection
-                ViewBag.skills = DropdownUtility.Instance.getSelectList(User.Identity.Name);
+                ViewBag.skills = DropdownUtility.Instance.getSkillsSelectList(User.Identity.Name, int.Parse(categories.FirstOrDefault().Value));
             }
             catch (Exception ex)
             {
@@ -174,7 +173,13 @@ namespace FreelancerCLone.Controllers
             }
             return PartialView("UserSkillsCreateEditPartialView");
         }
-
+        [Authorize]
+        public IActionResult GetSkills(int categoryId)
+        {
+            IEnumerable<SelectListItem> skillsDropdown = DropdownUtility.Instance.getSkillsSelectList(User.Identity.Name, categoryId);
+            return Json(skillsDropdown);
+        }
+        [Authorize]
         // Handles the post request for adding user skills
         [HttpPost]
         public IActionResult AddUserSkills(UserSkill model)
@@ -195,7 +200,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("Skills");
         }
-
+        [Authorize]
         // Deletes a user skill
         public IActionResult DeleteUserSkills(int Id)
         {
@@ -211,7 +216,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("Skills");
         }
-
+        [Authorize]
         // Deletes a user's personal project
         public IActionResult DeleteUserpersonalProjects(int Id)
         {
@@ -227,7 +232,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("Skills");
         }
-
+        [Authorize]
         // Displays the details of a personal project
         public IActionResult ProjectDetails(int Id)
         {

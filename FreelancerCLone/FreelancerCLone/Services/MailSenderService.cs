@@ -11,7 +11,7 @@ namespace FreelancerCLone.Services
         private static MailSenderService _instance;
         private static SmtpClient smtpClient;
 
-        private static string emailAddress = "";
+        private static string emailAddress = "admin@admin.com";
         private static string password = "";
 
         // Singleton pattern: Ensures only one instance of the MailSenderService is created

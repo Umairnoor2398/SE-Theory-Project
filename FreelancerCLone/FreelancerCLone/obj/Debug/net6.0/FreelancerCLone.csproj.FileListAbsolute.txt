@@ -1092,3 +1092,5 @@ C:\Users\Umair\Desktop\FreelancerCLone\FreelancerCLone\FreelancerCLone\obj\Debug
 C:\Users\Umair\Desktop\FreelancerCLone\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\FreelancerCLone.pdb
 C:\Users\Umair\Desktop\FreelancerCLone\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\FreelancerCLone.genruntimeconfig.cache
 C:\Users\Umair\Desktop\FreelancerCLone\FreelancerCLone\FreelancerCLone\obj\Debug\net6.0\ref\FreelancerCLone.dll
+C:\Users\Umair\Desktop\FreelancerCLone\FreelancerCLone\FreelancerCLone\bin\Debug\net6.0\NLog.Database.dll
+C:\Users\Bisma\OneDrive\Desktop\Desktop\SE\SE Lab\SELabProject\FreeLancerClone.github.io\FreelancerCLone\FreelancerCLone\bin\Debug\net6.0\NLog.Database.dll

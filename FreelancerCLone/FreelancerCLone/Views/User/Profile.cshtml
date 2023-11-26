@@ -78,6 +78,10 @@
         </div>
         <div class="media">
             <h3>Personal Projects:</h3>
+            @if (isMyProfile)
+            {
+                <a class="btn btn-primary" asp-controller="User" asp-action="Projects">Manage</a>
+            }
             <div class="table-responsive">
                 <table class="table table-striped table-hover data-table">
                     <thead>
@@ -120,7 +124,10 @@
         <div class="news">
             <h4>Skills</h4>
         </div>
-
+        @if (isMyProfile)
+        {
+            <a class="btn btn-primary" asp-controller="User" asp-action="Skills">Manage</a>
+        }
         @if (Model.UserSkills.Count > 0)
         {
             foreach (var skill in Model.UserSkills)

@@ -1,10 +1,15 @@
-﻿namespace FreelancerCLone.ViewModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FreelancerCLone.ViewModels
 {
     public class UserViewModel
     {
         public int Id { get; set; }
         public string UserId { get; set; } = null!;
+        [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; } = null!;
+        [Display(Name = "Last Name")]
         public string? LastName { get; set; }
         public DateTime AddedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }

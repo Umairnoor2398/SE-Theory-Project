@@ -16,7 +16,7 @@ namespace FreelancerCLone.Controllers
         {
             _webHostEnvironment = webHostEnvironment;
         }
-
+        [Authorize]
         // Displays a list of projects based on user and search query
         public IActionResult Index(string query)
         {
@@ -81,14 +81,14 @@ namespace FreelancerCLone.Controllers
             }
             return View(userprojects);
         }
-
+        [Authorize]
         // Displays a partial view to rate a user's bid on a project
         public IActionResult UserBidRate(int Id)
         {
             ViewBag.BidId = Id;
             return PartialView("UserBidRatePartialView");
         }
-
+        [Authorize]
         // Handles the post request to rate a user's bid on a project
         [HttpPost]
         public async Task<IActionResult> BidRatePostAsync(ProjectBid model)
@@ -106,7 +106,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("MyProjects");
         }
-
+        [Authorize]
         // Displays details of a specific project
         public IActionResult Details(int Id)
         {
@@ -125,14 +125,14 @@ namespace FreelancerCLone.Controllers
             }
             return View(project);
         }
-
+        [Authorize]
         // Displays a partial view to bid on a project
         public IActionResult BidProject(int Id)
         {
             ViewBag.ProjectId = Id;
             return PartialView("ProjectBidPartialView");
         }
-
+        [Authorize]
         // Handles the post request to bid on a project
         [HttpPost]
         public async Task<IActionResult> BidProjectPost(ProjectBid model)
@@ -151,7 +151,7 @@ namespace FreelancerCLone.Controllers
 
             return RedirectToAction("Details", new { Id = model.ProjectId });
         }
-
+        [Authorize]
         // Approves a bid on a project and sends a notification email
         public async Task<IActionResult> ApproveBidAsync(int BidId, int ProjectId)
         {
@@ -169,7 +169,7 @@ namespace FreelancerCLone.Controllers
 
             return RedirectToAction("Details", new { Id = ProjectId });
         }
-
+        [Authorize]
         // Deletes a user's bid on a project
         public IActionResult DeleteBid(int Id)
         {
@@ -185,7 +185,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("AssignedProjects");
         }
-
+        [Authorize]
         // Changes the completeness status of a project and sends a notification email
         public async Task<IActionResult> ChangeProjectCompletenessAsync(int Id)
         {
@@ -251,7 +251,7 @@ namespace FreelancerCLone.Controllers
             }
             return RedirectToAction("MyProjects");
         }
-
+        [Authorize]
         // Deletes a project
         public async Task<IActionResult> Delete(int Id)
         {

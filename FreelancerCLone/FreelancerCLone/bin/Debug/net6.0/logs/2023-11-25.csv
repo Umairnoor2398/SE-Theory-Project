@@ -1,2 +1,9 @@
 2023-11-25 12:45:26.2438|Error|Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. occurred in FreelancerCLone.Controllers.UserController's Profile method. | 
 2023-11-25 18:31:50.5292|Error|'System.Dynamic.DynamicObject' does not contain a definition for 'isMyprofile' occurred in FreelancerCLone.Controllers.UserController's Profile method. | 
+2023-11-25 22:17:35.6020|Error|The parameter 'address' cannot be an empty string. (Parameter 'address') occurred in FreelancerCLone.Controllers.FeedbackController's Create method. | 
+2023-11-25 22:18:14.9133|Error|The parameter 'address' cannot be an empty string. (Parameter 'address') occurred in FreelancerCLone.Controllers.FeedbackController's Create method. | 
+2023-11-25 22:20:11.5923|Error|The parameter 'address' cannot be an empty string. (Parameter 'address') occurred in FreelancerCLone.Controllers.FeedbackController's Create method. | 
+2023-11-25 22:21:47.5948|Error|The parameter 'address' cannot be an empty string. (Parameter 'address') occurred in FreelancerCLone.Controllers.FeedbackController's Create method. | 
+2023-11-25 22:48:07.0724|Error|The parameter 'address' cannot be an empty string. (Parameter 'address') occurred in FreelancerCLone.Controllers.FeedbackController's Create method. | 
+2023-11-25 22:57:24.1713|Error|Object reference not set to an instance of an object. occurred in FreelancerCLone.Controllers.FeedbackController's UpdateStatus method. | 
+2023-11-25 23:02:26.2874|Error|An error occurred while saving the entity changes. See the inner exception for details. occurred in FreelancerCLone.Controllers.SkillsController's CreateCategory method. | 

@@ -35,7 +35,7 @@ namespace FreelancerCLone.Utilities
             p.AddedOn = DateTime.Now;
             p.AddedBy = userId;
             p.Id = project.Id;
-            p.IsActive = false;
+            p.IsActive = true;
             p.Status = db.Lookups.Where(x => x.Value == "Pending").FirstOrDefault().Id;
             p.TechnologyRequired = project.TechnologyRequired;
             p.Title = project.Title;
@@ -113,6 +113,7 @@ namespace FreelancerCLone.Utilities
                 viewModel.TechnologyRequired = p.TechnologyRequired;
                 viewModel.Budget = p.Budget;
                 viewModel.ProjectBids = p.ProjectBids;
+                viewModel.AddedOn = p.AddedOn;
                 viewModel.AddedByNavigation = p.AddedByNavigation;
                 pro.Add(viewModel);
             }
@@ -144,6 +145,7 @@ namespace FreelancerCLone.Utilities
                 viewModel.TechnologyRequired = p.TechnologyRequired;
                 viewModel.Budget = p.Budget;
                 viewModel.ProjectBids = p.ProjectBids;
+                viewModel.AddedOn = p.AddedOn;
                 pro.Add(viewModel);
             }
             return pro;
@@ -235,6 +237,9 @@ namespace FreelancerCLone.Utilities
             model.UserId = UserUtility.Instance.GetUserId(username);
             db.ProjectBids.Add(model);
             db.SaveChanges();
+
+            model = db.ProjectBids.Find(model.Id);
+
             return model;
         }
 

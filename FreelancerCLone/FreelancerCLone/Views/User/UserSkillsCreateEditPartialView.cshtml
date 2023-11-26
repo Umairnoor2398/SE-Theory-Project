@@ -1,45 +1,50 @@
 ﻿@model FreelancerCLone.DbModels.UserSkill
 
 @{
-	Layout = null;
+    Layout = null;
 }
 
 <div class="modal fade" id="skillModal" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				@if (ViewBag.Id != 0)
-				{
-					<h1 class="modal-title fs-5" id="skillModalLabel">Edit</h1>
-				}
-				else
-				{
-					<h1 class="modal-title fs-5" id="skillModalLabel">Create</h1>
-				}
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<form asp-action="AddUserSkills" enctype="multipart/form-data">
-					<input asp-for="Id" value="@ViewBag.Id" hidden />
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @if (ViewBag.Id != 0)
+                {
+                    <h1 class="modal-title fs-5" id="skillModalLabel">Edit</h1>
+                }
+                else
+                {
+                    <h1 class="modal-title fs-5" id="skillModalLabel">Create</h1>
+                }
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="AddUserSkills" enctype="multipart/form-data">
+                    <input asp-for="Id" value="@ViewBag.Id" hidden />
+
+                    <div class="form-floating my-2">
+                        <select for="category" id="category" asp-items="ViewBag.skillCategories" class="form-select" aria-label="Default select example">
+                        </select>
+                        <label for="category" class="control-label">Category</label>
+                        <span asp-validation-for="SkillId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating my-2">
+                        <select asp-for="SkillId" asp-items="ViewBag.skills" id="SkillId" class="form-select" aria-label="Default select example">
+                        </select>
+                        <label asp-for="SkillId" class="control-label"></label>
+                        <span asp-validation-for="SkillId" class="text-danger"></span>
+                    </div>
 
 
-					<div class="form-floating">
-						<select asp-for="SkillId" asp-action="" asp-items="ViewBag.skills" class="form-select" aria-label="Default select example">
-							
-						</select>
-						<label asp-for="SkillId" class="control-label"></label>
-						<span asp-validation-for="SkillId" class="text-danger"></span>
-					</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
 
+            </div>
 
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<input type="submit" value="Save" class="btn btn-primary" />
-					</div>
-				</form>
-
-			</div>
-
-		</div>
-	</div>
+        </div>
+    </div>
 </div>

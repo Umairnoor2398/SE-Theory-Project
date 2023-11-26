@@ -49,3 +49,31 @@
         })
     }
 </script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#category").change(function () {
+
+            var selectedCategory = $("#category").val();
+
+            var lstSkills = $("#SkillId");
+            lstSkills.empty();
+            if (selectedCategory != null && selectedCategory != "") {
+                $.getJSON('@Url.Action("GetSkills")', { categoryId: selectedCategory }, function (skillsDropdown) {
+                    if (skillsDropdown != null && !jQuery.isEmptyObject(skillsDropdown)) {
+                        $.each(skillsDropdown, function (index, skill) {
+                            lstSkills.append($('<option/>', {
+                                value: skill.value,
+                                text: skill.text
+                            }));
+                        });
+
+                    }
+                })
+            }
+        });
+
+    })
+</script>

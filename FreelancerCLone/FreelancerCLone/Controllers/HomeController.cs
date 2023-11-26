@@ -1,6 +1,7 @@
 ﻿using FreelancerCLone.Models;
 using FreelancerCLone.Services;
 using FreelancerCLone.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
@@ -22,7 +23,7 @@ namespace FreelancerCLone.Controllers
         {
             return View();
         }
-
+        [Authorize]
         // Displays the Feedback page with feedback category options
         public IActionResult Feedback()
         {
