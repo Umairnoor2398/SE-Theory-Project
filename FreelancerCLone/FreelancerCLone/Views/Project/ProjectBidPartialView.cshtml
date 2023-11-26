@@ -22,16 +22,16 @@
                 <form asp-action="BidProjectPost">
                     <input asp-for="ProjectId" value="@ViewBag.ProjectId" hidden />
 
-                    <div class="form-floating p-3">
-                        <input asp-for="BidBudget" class="form-control" />
-                        <label asp-for="BidBudget" class="control-label"></label>
+                    <div class="form-floating my-3">
+                        <input min="5" asp-for="BidBudget" class="form-control" />
+                        <label asp-for="BidBudget" class="control-label">Budget in $</label>
                         <span asp-validation-for="BidBudget" class="text-danger"></span>
                     </div>
 
 
-                    <div class="form-floating p-3">
-                        <input asp-for="BidDeadline" class="form-control" />
-                        <label asp-for="BidDeadline" class="control-label"></label>
+                    <div class="form-floating  my-3">
+                        <input min= "1" asp-for="BidDeadline" class="form-control" />
+                        <label asp-for="BidDeadline" class="control-label">Deadline in days</label>
                         <span asp-validation-for="BidDeadline" class="text-danger"></span>
                     </div>
 

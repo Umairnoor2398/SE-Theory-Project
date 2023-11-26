@@ -95,7 +95,10 @@ namespace FreelancerCLone.Services
 
         public async Task SendMailRateProject(ProjectBid projectBid)
         {
-            var user = UserUtility.Instance.GetUserForProfile(projectBid.UserId, "");
+
+			FreelancerDbContext db = new FreelancerDbContext();
+			projectBid = db.ProjectBids.Find(projectBid.Id);
+			var user = UserUtility.Instance.GetUserForProfile(projectBid.UserId, "");
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(emailAddress);
             mail.To.Add(user.UserNavigation.Email);
@@ -113,6 +116,8 @@ namespace FreelancerCLone.Services
 
         public async Task SendMailOnReceiveBidInProject(ProjectBid projectBid)
         {
+            FreelancerDbContext db = new FreelancerDbContext();
+            projectBid = db.ProjectBids.Find(projectBid.Id);
             var user = UserUtility.Instance.GetUserForProfile(projectBid.Project.AddedBy, "");
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(emailAddress);
@@ -131,7 +136,10 @@ namespace FreelancerCLone.Services
 
         public async Task SendMailOnApproveBidInProject(ProjectBid projectBid)
         {
-            var user = UserUtility.Instance.GetUserForProfile(projectBid.UserId, "");
+
+			FreelancerDbContext db = new FreelancerDbContext();
+			projectBid = db.ProjectBids.Find(projectBid.Id);
+			var user = UserUtility.Instance.GetUserForProfile(projectBid.UserId, "");
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(emailAddress);
             mail.To.Add(user.UserNavigation.Email);
@@ -149,7 +157,10 @@ namespace FreelancerCLone.Services
 
         public async Task SendMailOnProjectCompletenesssUpdate(ProjectBid projectBid)
         {
-            var user = UserUtility.Instance.GetUserForProfile(projectBid.Project.AddedBy, "");
+
+			FreelancerDbContext db = new FreelancerDbContext();
+			projectBid = db.ProjectBids.Find(projectBid.Id);
+			var user = UserUtility.Instance.GetUserForProfile(projectBid.Project.AddedBy, "");
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(emailAddress);
             mail.To.Add(user.UserNavigation.Email);

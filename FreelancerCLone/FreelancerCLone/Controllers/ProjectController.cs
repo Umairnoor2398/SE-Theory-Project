@@ -91,7 +91,7 @@ namespace FreelancerCLone.Controllers
         [Authorize]
         // Handles the post request to rate a user's bid on a project
         [HttpPost]
-        public async Task<IActionResult> BidRatePostAsync(ProjectBid model)
+        public async Task<IActionResult> BidRatePost(ProjectBid model)
         {
             try
             {

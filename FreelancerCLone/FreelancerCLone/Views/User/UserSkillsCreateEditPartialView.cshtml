@@ -23,7 +23,7 @@
                     <input asp-for="Id" value="@ViewBag.Id" hidden />
 
                     <div class="form-floating my-2">
-                        <select for="category" id="category" asp-items="ViewBag.skillCategories" class="form-select" aria-label="Default select example">
+                        <select onchange="getSkills()" for="category" id="category" asp-items="ViewBag.skillCategories" class="form-select" aria-label="Default select example">
                         </select>
                         <label for="category" class="control-label">Category</label>
                         <span asp-validation-for="SkillId" class="text-danger"></span>

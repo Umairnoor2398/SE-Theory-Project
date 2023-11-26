@@ -43,21 +43,14 @@
                     <td>
                         @item.BidDeadline
                     </td>
-                    @if (item.IsReviewed == false)
+                    @if (item.IsReviewed == false && item.StatusNavigation.Value=="Accepted")
                     {
                         <td>
                             Not Reviewed Yet
-                            @if (item.IsCompleted == false)
-                            {
-                                <a asp-action="ChangeProjectCompleteness" asp-route-id="@item.Id">Mark as Completed</a>
-                            }
-                            else
-                            {
-                                <a asp-action="ChangeProjectCompleteness" asp-route-id="@item.Id">Mark as Un-Completed</a>
-                            }
+                           
                         </td>
                     }
-                    else
+                    else if (item.StatusNavigation.Value == "Accepted")
                     {
                         @if (item.Rating == null)
                         {
@@ -69,10 +62,22 @@
                         }
                     }
                     <td>
+                       
                         <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ProjectId">Details</a>
                         @if (item.StatusNavigation.Value != "Accepted")
                         {
                             <a class="btn btn-danger" asp-action="DeleteBid" asp-route-id="@item.Id">Delete</a>
+                        }
+                        else
+                        {
+                            @if (item.IsCompleted == false && item.IsReviewed==false)
+                            {
+                                <a asp-action="ChangeProjectCompleteness" class="btn btn-success" asp-route-id="@item.Id">Mark as Completed</a>
+                            }
+                            else if (item.IsReviewed == false)
+                            {
+                                <a asp-action="ChangeProjectCompleteness" class="btn btn-danger" asp-route-id="@item.Id">Mark as Un-Completed</a>
+                            }
                         }
 
                     </td>

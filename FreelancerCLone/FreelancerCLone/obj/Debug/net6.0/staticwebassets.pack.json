@@ -9,8 +9,28 @@
       "PackagePath": "staticwebassets\\DefaultUser.png"
     },
     {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\ProjectDocuments\\757b389c-d82b-4a8d-882c-c5253ccdaced.pdf",
+      "PackagePath": "staticwebassets\\ProjectDocuments\\757b389c-d82b-4a8d-882c-c5253ccdaced.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\ProjectDocuments\\bc9872db-4f97-42cc-af75-6870d42d3e83.pdf",
+      "PackagePath": "staticwebassets\\ProjectDocuments\\bc9872db-4f97-42cc-af75-6870d42d3e83.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\ProjectDocuments\\eb2394d9-99d7-4b33-8b1c-03a5926f7f42.pdf",
+      "PackagePath": "staticwebassets\\ProjectDocuments\\eb2394d9-99d7-4b33-8b1c-03a5926f7f42.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\ProjectImages\\fef0bdc5-b237-4725-b61d-f4f0c08931d4.pdf",
+      "PackagePath": "staticwebassets\\ProjectImages\\fef0bdc5-b237-4725-b61d-f4f0c08931d4.pdf"
+    },
+    {
       "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\UserImages\\5795f2ea-78d0-4625-9724-8dcb5723da61.png",
       "PackagePath": "staticwebassets\\UserImages\\5795f2ea-78d0-4625-9724-8dcb5723da61.png"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\UserImages\\5d2cb46f-17f4-4f47-96eb-c7b4b673abd6.jpg",
+      "PackagePath": "staticwebassets\\UserImages\\5d2cb46f-17f4-4f47-96eb-c7b4b673abd6.jpg"
     },
     {
       "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\assets\\css\\main.css",
@@ -791,6 +811,258 @@
     {
       "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-autoplay.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-autoplay.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-comments.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-comments.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-fullscreen.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-fullscreen.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-medium-zoom.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-medium-zoom.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-pager.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-pager.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-relative-caption.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-relative-caption.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-rotate.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-rotate.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-share.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-share.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-thumbnail.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-thumbnail.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-transitions.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-transitions.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-video.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-video.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lg-zoom.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lg-zoom.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lightgallery-bundle.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lightgallery-bundle.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lightgallery-bundle.min.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lightgallery-bundle.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lightgallery-core.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lightgallery-core.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\css\\lightgallery.css",
+      "PackagePath": "staticwebassets\\lightgallery\\css\\lightgallery.css"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\fonts\\lg.svg",
+      "PackagePath": "staticwebassets\\lightgallery\\fonts\\lg.svg"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\fonts\\lg.ttf",
+      "PackagePath": "staticwebassets\\lightgallery\\fonts\\lg.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\fonts\\lg.woff",
+      "PackagePath": "staticwebassets\\lightgallery\\fonts\\lg.woff"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\fonts\\lg.woff2",
+      "PackagePath": "staticwebassets\\lightgallery\\fonts\\lg.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\lightgallery\\images\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\lightgallery.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\lightgallery.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\lightgallery.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\lightgallery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\lightgallery.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\lightgallery.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\autoplay\\lg-autoplay.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\autoplay\\lg-autoplay.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\autoplay\\lg-autoplay.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\autoplay\\lg-autoplay.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\autoplay\\lg-autoplay.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\autoplay\\lg-autoplay.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\comment\\lg-comment.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\comment\\lg-comment.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\comment\\lg-comment.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\comment\\lg-comment.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\comment\\lg-comment.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\comment\\lg-comment.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\fullscreen\\lg-fullscreen.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\fullscreen\\lg-fullscreen.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\fullscreen\\lg-fullscreen.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\fullscreen\\lg-fullscreen.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\fullscreen\\lg-fullscreen.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\fullscreen\\lg-fullscreen.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\hash\\lg-hash.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\hash\\lg-hash.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\hash\\lg-hash.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\hash\\lg-hash.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\hash\\lg-hash.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\hash\\lg-hash.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\mediumZoom\\lg-medium-zoom.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\mediumZoom\\lg-medium-zoom.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\mediumZoom\\lg-medium-zoom.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\mediumZoom\\lg-medium-zoom.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\mediumZoom\\lg-medium-zoom.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\mediumZoom\\lg-medium-zoom.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\pager\\lg-pager.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\pager\\lg-pager.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\pager\\lg-pager.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\pager\\lg-pager.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\pager\\lg-pager.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\pager\\lg-pager.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\relativeCaption\\lg-relative-caption.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\relativeCaption\\lg-relative-caption.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\relativeCaption\\lg-relative-caption.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\relativeCaption\\lg-relative-caption.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\relativeCaption\\lg-relative-caption.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\relativeCaption\\lg-relative-caption.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\rotate\\lg-rotate.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\rotate\\lg-rotate.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\rotate\\lg-rotate.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\rotate\\lg-rotate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\rotate\\lg-rotate.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\rotate\\lg-rotate.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\share\\lg-share.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\share\\lg-share.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\share\\lg-share.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\share\\lg-share.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\share\\lg-share.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\share\\lg-share.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\thumbnail\\lg-thumbnail.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\thumbnail\\lg-thumbnail.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\thumbnail\\lg-thumbnail.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\thumbnail\\lg-thumbnail.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\thumbnail\\lg-thumbnail.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\thumbnail\\lg-thumbnail.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\video\\lg-video.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\video\\lg-video.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\video\\lg-video.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\video\\lg-video.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\video\\lg-video.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\video\\lg-video.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\vimeoThumbnail\\lg-vimeo-thumbnail.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\vimeoThumbnail\\lg-vimeo-thumbnail.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\vimeoThumbnail\\lg-vimeo-thumbnail.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\vimeoThumbnail\\lg-vimeo-thumbnail.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\vimeoThumbnail\\lg-vimeo-thumbnail.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\vimeoThumbnail\\lg-vimeo-thumbnail.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\zoom\\lg-zoom.es5.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\zoom\\lg-zoom.es5.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\zoom\\lg-zoom.min.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\zoom\\lg-zoom.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Bisma\\OneDrive\\Desktop\\Desktop\\SE\\SE Lab\\SELabProject\\FreeLancerClone.github.io\\FreelancerCLone\\FreelancerCLone\\wwwroot\\lightgallery\\plugins\\zoom\\lg-zoom.umd.js",
+      "PackagePath": "staticwebassets\\lightgallery\\plugins\\zoom\\lg-zoom.umd.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FreelancerCLone.Microsoft.AspNetCore.StaticWebAssets.props",

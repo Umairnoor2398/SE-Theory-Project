@@ -56,7 +56,7 @@ namespace FreelancerCLone.Utilities
                 bool isFound = false;
                 foreach (var sk in s.UserSkills)
                 {
-                    if (sk.UserId == id)
+                    if (sk.UserId == id && sk.IsActive == true)
                     {
                         isFound = true;
                         break;

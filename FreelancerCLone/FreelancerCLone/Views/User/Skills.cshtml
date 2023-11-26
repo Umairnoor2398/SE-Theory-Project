@@ -25,10 +25,10 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Skill.Id)
+                        @item.Skill.SkillName
                     </td>
                     <td>
-                        <a asp-action="DeleteUserSkills" asp-route-id="@item.Id">Delete</a>
+                        <a class="btn btn-danger" asp-action="DeleteUserSkills" asp-route-id="@item.Id">Delete</a>
                     </td>
                 </tr>
             }
@@ -48,32 +48,28 @@
             }
         })
     }
-</script>
 
-<script type="text/javascript">
+    function getSkills() {
 
-    $(document).ready(function () {
+        var selectedCategory = $("#category").val();
 
-        $("#category").change(function () {
+        $.ajax({
+            type: "Get",
+            data: { categoryId: selectedCategory },
+            url: "/User/GetSkills",
+            success: function (result) {
+                var lstSkills = $("#SkillId");
+                lstSkills.empty();
 
-            var selectedCategory = $("#category").val();
-
-            var lstSkills = $("#SkillId");
-            lstSkills.empty();
-            if (selectedCategory != null && selectedCategory != "") {
-                $.getJSON('@Url.Action("GetSkills")', { categoryId: selectedCategory }, function (skillsDropdown) {
-                    if (skillsDropdown != null && !jQuery.isEmptyObject(skillsDropdown)) {
-                        $.each(skillsDropdown, function (index, skill) {
-                            lstSkills.append($('<option/>', {
-                                value: skill.value,
-                                text: skill.text
-                            }));
-                        });
-
-                    }
-                })
+                if (result != null && !jQuery.isEmptyObject(result)) {
+                    $.each(result, function (index, skill) {
+                        lstSkills.append($('<option/>', {
+                            value: skill.value,
+                            text: skill.text
+                        }));
+                    });
+                }
             }
-        });
-
-    })
+        })
+    }
 </script>

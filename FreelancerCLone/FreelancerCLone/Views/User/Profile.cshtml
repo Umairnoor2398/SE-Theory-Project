@@ -93,7 +93,7 @@
                     </thead>
                     <tbody>
 
-                        @foreach (var pro in Model.FreelancerPersonalProjects)
+                        @foreach (var pro in Model.FreelancerPersonalProjects.Where(x => x.IsActive == true).ToList())
                         {
                             <tr>
                                 <td>@pro.Title</td>
@@ -130,7 +130,7 @@
         }
         @if (Model.UserSkills.Count > 0)
         {
-            foreach (var skill in Model.UserSkills)
+            foreach (var skill in Model.UserSkills.Where(x => x.IsActive == true).ToList())
             {
                 <div class="latest_news">
                     <div class="one">

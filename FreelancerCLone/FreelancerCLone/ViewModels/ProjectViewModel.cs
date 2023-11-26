@@ -10,12 +10,15 @@ namespace FreelancerCLone.ViewModels
         public string Title { get; set; } = null!;
         public string? Description { get; set; }
         [Required]
-        [Display(Name = "Budget in PKR")]
+        [Display(Name = "Budget in $")]
+        [Range(5, int.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
         public int Budget { get; set; }
         [Required]
         [Display(Name = "Deadline in Days")]
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
         public int? Deadline { get; set; }
         [Required]
+        [Display(Name = "Technology/Skills Required")]
         public string TechnologyRequired { get; set; } = null!;
         public int Status { get; set; }
         public int AddedBy { get; set; }

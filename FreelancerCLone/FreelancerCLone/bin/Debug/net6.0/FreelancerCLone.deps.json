@@ -20,6 +20,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
           "NLog": "5.2.4",
           "NLog.Database": "5.2.4",
+          "NLog.Extensions.Logging": "5.3.4",
           "NLog.Web.AspNetCore": "5.3.4",
           "iTextSharp": "5.5.13.3"
         },

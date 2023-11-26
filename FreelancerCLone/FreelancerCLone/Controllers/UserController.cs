@@ -236,7 +236,18 @@ namespace FreelancerCLone.Controllers
         // Displays the details of a personal project
         public IActionResult ProjectDetails(int Id)
         {
-            return View();
+            FreelancerPersonalProject personalProject = new FreelancerPersonalProject();
+            try
+            {
+                // Retrieve a user's personal project
+                personalProject = UserUtility.Instance.GetFreelancerPersonalProject(Id);
+            }
+            catch (Exception ex)
+            {
+                // Log any exceptions that occur during user personal project retrieval
+                ErrorLogger.Instance.ErrorLoggingFunction(ex.Message, this.ToString());
+            }
+            return View(personalProject);
         }
     }
 }

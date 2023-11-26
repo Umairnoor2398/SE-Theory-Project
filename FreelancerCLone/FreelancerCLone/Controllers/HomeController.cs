@@ -27,6 +27,7 @@ namespace FreelancerCLone.Controllers
         // Displays the Feedback page with feedback category options
         public IActionResult Feedback()
         {
+            ErrorLogger.Instance.ErrorLoggingFunction("Something", this.ToString());
             try
             {
                 // Populates ViewBag with feedback category options

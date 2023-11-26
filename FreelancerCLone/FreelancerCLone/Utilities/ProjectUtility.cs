@@ -207,6 +207,7 @@ namespace FreelancerCLone.Utilities
             var bid = db.ProjectBids.Find(model.Id);
             bid.Rating = model.Rating;
             bid.IsReviewed = true;
+            bid.Status = db.Lookups.Where(x => x.Value == "Accepted").FirstOrDefault().Id;
             bid.UpdatedOn = DateTime.Now;
             db.ProjectBids.Update(bid);
             db.SaveChanges();
