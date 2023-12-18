@@ -61,6 +61,7 @@ namespace FreelancerCLone.Controllers
 
             return PartialView("ProfileEditPartialView", userDb);
         }
+        [HttpPost]
         [Authorize]
         // Handles the post request to update the user profile
         public async Task<IActionResult> EditprofilePost(UserViewModel user)

@@ -1,0 +1,3 @@
+2023-12-15 20:28:19.4073|Error|An error occurred while saving the entity changes. See the inner exception for details. occurred in FreelancerCLone.Controllers.ProjectController's Create method. | 
+2023-12-15 21:24:02.9627|Error|Something occurred in FreelancerCLone.Controllers.HomeController's Feedback method. | 
+2023-12-15 22:46:59.6003|Error|Object reference not set to an instance of an object. occurred in FreelancerCLone.Controllers.UserController's CreateEditProject method. | 
